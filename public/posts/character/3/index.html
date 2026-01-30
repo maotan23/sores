@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang='zh'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+<meta charset="utf-8">
+<i class="dark hidden"></i>
+<title>
+  
+    
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    
+    
+      面孔收录 | 琅图斯
+    
+  
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href='/favicon-32x32.png'>
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="/css/main.css">
+        
+    </head>
+    
+    
+    <body class="bg-skin flex flex-col min-h-screen dark:bg-black">
+    <header class="bg-rose text-white dark:bg-warmgray-900 dark:text-white" style="font-family: 'title'">
+    <nav class="flex items-center justify-between flex-wrap p-4">
+        <div class="flex items-center flex-shrink-0 text-2xl mx-6">
+          
+            <a href="http://localhost:1313/"><img src="/img/logo.webp" class="w-24 h-auto" /></a>
+          
+        </div>
+        <div class="flex items-center">
+            
+            <div class="hidden md:block mr-4">
+                
+            </div>
+            
+            <button id="theme-toggle" class="focus:outline-none p-2" aria-label="切换日间/夜间模式">
+                <i class="icon-moon text-xl" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    
+    const getCurrentTheme = () => {
+        if (localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    };
+    
+    
+    const initTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun'); 
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        }
+    };
+    
+    
+    const toggleTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun');
+        }
+    };
+    
+    
+    initTheme();
+    
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    
+    window.toggleDarkMode = toggleTheme;
+});
+</script><div class="container mx-auto max-w-7xl my-4 flex-grow" id="content">
+
+<div class="flex min-h-screen flex-col">
+  
+  <div class="flex-grow flex">
+    
+    <div class="hidden lg:block lg:w-1/4 mr-5">
+      
+
+
+  
+  
+  
+    
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+      
+      
+      
+        
+        
+        
+        
+        
+          
+        
+      
+      
+    
+    
+
+    <nav class="hidden lg:block w-set">
+      <div class="rounded-lg border border-gray-200 dark:border-warmgray-700 bg-flora dark:bg-warmgray-800 p-4 overflow-auto max-h-[calc(100vh-8rem)]">
+        <h3 class="text-lg font-bold mb-3 pb-3 border-b border-gray-200 dark:border-warmgray-700 dark:text-white">章节目录</h3>
+        
+          
+          
+          <a href="/posts/character/1/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第1章 诗人王子
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/2/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第2章 卡西努斯
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/3/" class="block px-2 py-2 rounded transition-all duration-150 bg-lace dark:bg-warmgray-700 font-semibold">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第3章 琅图斯
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/4/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第4章 若南
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/5/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第5章 白胡椒
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/6/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第6章 里尔
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/7/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第7章 基塔
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/8/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第8章 威丁克
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/9/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第9章 奥柯
+            </div>
+          </a>
+        
+          
+          
+          <a href="/posts/character/10/" class="block px-2 py-2 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              第10章 尤安多罗斯
+            </div>
+          </a>
+        
+      </div>
+    </nav>
+  
+
+    </div>
+
+    
+    <div class="w-full lg:w-1/2 dark:text-white">
+      <div class="bg-lace dark:bg-warmgray-700 lg:flex p-7">
+        
+        <img class="rounded mx-auto w-auto h-48 lg:ml-0 lg:mr-8" src="/img/5.webp" alt="thumbnail"/>
+        
+        <div>
+          <h1 class="title text-xl my-3">琅图斯</h1>
+          <p class="mb-3 text-xs opacity-70">7字</p>
+          <p class="text-sm opacity-80"></p>
+          
+          <div id="tags">
+            
+            <span class="text-sm inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-500"><a href="http://localhost:1313/tags/%E8%A7%92%E8%89%B2">#角色</a></span>
+            
+          </div>
+          
+          <h4 id="date" class="text-sm">最近更新时间：2025/03/23</h4>
+        </div>
+      </div>
+
+      <div class="bg-flora dark:bg-warmgray-800 pt-14 border-t border-b dark:border-warmgray-800">
+        <div class="mx-auto max-w-2xl px-5">
+          <div class="prose lg:prose-xl dark:prose-dark text-base py-3">
+
+            <p><br/><br/></p>
+<p>此处是填充……</p>
+<p><br/><br/><br/></p>
+
+            
+            
+            
+              
+              
+              
+              
+              
+              
+                
+                
+                
+                
+                  
+                
+              
+              
+              
+              
+              
+                
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                  
+                  
+                  
+                    
+                    
+                    
+                      
+                    
+                  
+                  
+                
+                
+                
+                
+                
+                
+                
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    
+                    
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                
+                
+                
+                  <div class="mt-8 text-center">
+                    <p class="text-lg font-medium">
+                      <a href="/posts/character/4/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200">
+                        继续阅读下一章
+                      </a>
+                    </p>
+                  </div>
+                
+              
+            
+            
+            
+            <div class="mt-8 text-center">
+              <p class="text-lg font-medium">
+                <a href="/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200">
+                  返回主页
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="hidden lg:block lg:w-1/4 ml-5">
+      
+
+      
+      <div class="mb-4">
+        <nav class="rounded-lg border border-gray-200 dark:border-warmgray-700 bg-flora dark:bg-warmgray-800 p-4 w-set mb-4">
+          <h3 class="text-lg font-bold mb-2 pb-2 border-b border-gray-200 dark:border-warmgray-700 dark:text-white">章节导航</h3>
+          
+          
+          <a href="/" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              返回主页
+            </div>
+          </a>
+          
+          
+          
+            
+            
+            
+            
+            
+            
+              
+              
+              
+              
+                
+              
+            
+            
+            
+            
+            
+              
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+                
+                
+                
+                  
+                  
+                  
+                    
+                  
+                
+                
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                
+              
+                
+              
+                
+                  
+                  
+                  
+                    
+                  
+                  
+                  
+                    
+                  
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              
+              
+              
+                <a href="/posts/character/2/" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+                  <div class="text-gray-900 dark:text-gray-100 text-sm">
+                    上一章
+                  </div>
+                </a>
+              
+              
+              
+              
+                <a href="/posts/character/4/" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+                  <div class="text-gray-900 dark:text-gray-100 text-sm">
+                    下一章
+                  </div>
+                </a>
+              
+              
+            
+          
+        </nav>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</div>
+
+        </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">
+  <div class="container mx-auto px-4">
+    <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">结痂行会</a></p>
+  </div>
+</footer>
+<script>
+  function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+          overlay.classList.toggle("open");
+          hamburger.classList.toggle("is-open");
+          body.classList.toggle("scroll-lock");
+      });
+  }
+  toggleNav();
+
+  var icon = document.getElementById("icon");
+  if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+  } else {
+      document.documentElement.classList.remove('dark')
+  }
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      icon.classList.remove("icon-sun");
+      icon.classList.add("icon-moon");
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    } else {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    }
+  }
+</script>
+
+</body>
+</html>
+

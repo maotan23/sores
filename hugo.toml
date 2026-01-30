@@ -1,0 +1,26 @@
+baseURL = "https://example.org/"
+title = "结痂行会"
+languageCode = "zh"
+DefaultContentLanguage = "zh"
+enableInlineShortcodes = true
+theme = "vnovel"
+enableRobotsTXT = true
+hasCJKLanguage = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+paginator_pages = "5"
+
+# Site logo.
+logo = "/img/logo.webp"
+
+  [params.homepage_meta_tags]
+    meta_description = "疮海夜夜狂谭。"
+    meta_og_title = "结痂行会"
+    meta_og_type = "website"
+    meta_og_image = "https://vnovel.pages.dev/img/thumbnail.png"
+    
