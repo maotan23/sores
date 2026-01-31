@@ -130,6 +130,266 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+<div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
+  
+  <label for="search-input" class="search-label" style="display:block; margin-bottom:0.35rem; font-size:0.95rem;">
+    搜索本站文章
+  </label>
+
+  <div class="relative">
+    <input
+      id="search-input"
+      type="search"
+      placeholder="搜索文章 / 标题 / 标签…"
+      aria-label="搜索本站文章"
+      autocomplete="off"
+      class="w-full p-2 rounded border-0 border-b border-gray-200 text-base focus:outline-none"
+      style="border-bottom-width:1px; border-color:var(--search-border-color);"
+      disabled
+    />
+  </div>
+
+  <div id="search-results" class="mt-2 w-full" role="list" aria-live="polite"></div>
+</div>
+
+<script>
+ 
+(async function () {
+  const INDEX_URL = '\/index.json';
+  const input = document.getElementById('search-input');
+  const resultsEl = document.getElementById('search-results');
+
+  let fuse = null;
+  let data = [];
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      if (window.Fuse) return resolve();
+      const s = document.createElement('script');
+      s.src = src;
+      s.async = true;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('加载脚本失败: ' + src));
+      document.head.appendChild(s);
+    });
+  }
+
+  try {
+    const res = await fetch(INDEX_URL, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`索引读取失败（HTTP ${res.status}）`);
+    data = await res.json();
+    console.debug('[search] index.json 已加载，条目数:', Array.isArray(data) ? data.length : '(非数组)');
+  } catch (err) {
+    console.error('[search] 无法读取 index.json:', err);
+    input.disabled = true;
+    return;
+  }
+
+  try {
+    if (!window.Fuse) {
+      await loadScript('https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js');
+      console.debug('[search] Fuse.js 已加载');
+    }
+  } catch (err) {
+    console.error('[search] 加载 Fuse.js 失败:', err);
+    input.disabled = true;
+    return;
+  }
+
+  try {
+    fuse = new Fuse(data, {
+      keys: [
+        { name: "title", weight: 0.7 },
+        { name: "tags", weight: 0.5 },
+        { name: "summary", weight: 0.3 },
+        { name: "content", weight: 0.2 }
+      ],
+      includeMatches: true,
+      threshold: 0.32,
+      minMatchCharLength: 2,
+    });
+    console.debug('[search] Fuse 初始化完成');
+    input.disabled = false;
+  } catch (err) {
+    console.error('[search] 初始化 Fuse 失败:', err);
+    input.disabled = true;
+    return;
+  }
+
+  let debounceTimer = null;
+  input.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const q = e.target.value.trim();
+      if (!q) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+      doSearch(q);
+    }, 160);
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = resultsEl.querySelector('a');
+      if (first) window.location.href = first.href;
+    }
+  });
+
+  function doSearch(query) {
+    if (!fuse) return;
+    try {
+      const hits = fuse.search(query, { limit: 10 }) || [];
+      if (hits.length === 0) {
+        resultsEl.innerHTML = '<p class="text-gray-500 text-sm p-2">未找到结果</p>';
+        return;
+      }
+      resultsEl.innerHTML = hits.map(renderHit).join('');
+    } catch (err) {
+      console.error('[search] 搜索错误:', err);
+      resultsEl.innerHTML = '<p class="text-gray-500 text-sm p-2">搜索时出错（查看控制台）</p>';
+    }
+  }
+
+  function highlightUsingMatches(text, matchesArray) {
+    if (!text) return '';
+    if (!matchesArray || matchesArray.length === 0) return escapeHtml(truncate(text, 200));
+    try {
+      const firstRange = Array.isArray(matchesArray[0][0]) ? matchesArray[0][0] : matchesArray[0];
+      const start = Math.max(0, firstRange[0]);
+      const end = Math.min(text.length - 1, firstRange[1]);
+      const before = escapeHtml(text.slice(0, start));
+      const match = escapeHtml(text.slice(start, end + 1));
+      const after = escapeHtml(text.slice(end + 1));
+      return truncate(before, 60) + '<mark class="search-mark">' + match + '</mark>' + truncate(after, 120);
+    } catch (e) {
+      return escapeHtml(truncate(text, 200));
+    }
+  }
+
+  function renderHit(hit) {
+    const item = hit.item || hit;
+    const title = item.title || 'Untitled';
+    const url = item.url || '#';
+    const date = item.date ? (new Date(item.date)).toLocaleDateString() : '';
+    let titleMatches = null, summaryMatches = null;
+    if (hit.matches && Array.isArray(hit.matches)) {
+      for (const m of hit.matches) {
+        if (m.key === 'title') titleMatches = m.indices;
+        if (m.key === 'summary' || m.key === 'content') summaryMatches = m.indices;
+      }
+    }
+    const titleHtml = highlightUsingMatches(title, titleMatches);
+    const summaryText = item.summary || item.content || '';
+    const summaryHtml = highlightUsingMatches(truncate(summaryText, 220), summaryMatches);
+
+    return `
+      <article class="search-hit border-t border-gray-100 py-2">
+        <a href="${url}" class="block p-2 no-underline transition duration-100 hover:bg-gray-100">
+          <h3 class="text-base" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
+          <div class="text-xs" style="margin-top:6px; color:var(--search-date-color);">${escapeHtml(date)}</div>
+          <p class="text-sm" style="margin:0.4rem 0 0; color:var(--search-summary-color);">${summaryHtml}</p>
+        </a>
+      </article>
+    `;
+  }
+
+  function escapeHtml(s) {
+    if (!s) return '';
+    return String(s).replace(/[&<>"']/g, function (m) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]);
+    });
+  }
+  function truncate(s, n) {
+    if (!s) return '';
+    return s.length > n ? s.slice(0, n) + '…' : s;
+  }
+
+})();
+</script>
+
+<style>
+:root {
+  --search-input-color: #111827;
+  --search-placeholder-color: #9ca3af;
+  --search-border-color: #e5e7eb;
+  --search-result-bg-hover: #f8fafc;
+  --search-title-color: #111827;
+  --search-summary-color: #374151;
+  --search-date-color: #6b7280;
+  --search-mark-bg: #fff2b0;
+  --search-label-color: #374151;
+}
+
+ 
+.dark :root,
+.dark {
+  --search-input-color: #e5e7eb;
+  --search-placeholder-color: #9ca3af;
+  --search-border-color: #374151;
+  --search-result-bg-hover: rgba(255,255,255,0.03);
+  --search-title-color: #e5e7eb;
+  --search-summary-color: #d1d5db;
+  --search-date-color: #9ca3af;
+  --search-mark-bg: #5b3b00;
+  --search-label-color: #d1d5db;
+}
+
+ 
+.search-label {
+  color: var(--search-label-color);
+  font-weight: 600;
+}
+
+ 
+#site-search input {
+  background: transparent;
+  border-radius: 6px;
+  border: 0;
+  border-bottom: 1px solid var(--search-border-color);
+  padding: 0.5rem 0.6rem;
+  font-size: 1rem;
+  color: var(--search-input-color);
+  outline: none;
+}
+
+#site-search input::placeholder {
+  color: var(--search-placeholder-color);
+}
+
+ 
+#search-results {
+  background: transparent;
+  margin-top: 0.25rem;
+}
+
+.search-hit a {
+  color: inherit;
+  display: block;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.search-hit a:hover {
+  background: var(--search-result-bg-hover);
+}
+
+.search-hit h3 { line-height: 1.2; color: var(--search-title-color); }
+.search-hit p { color: var(--search-summary-color); }
+.search-hit .text-xs { color: var(--search-date-color); }
+
+ 
+.search-mark {
+  background: var(--search-mark-bg);
+  padding: 0 2px;
+  border-radius: 2px;
+  color: inherit;
+}
+</style>
+
+
+
         </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">
   <div class="container mx-auto px-4">
     <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">结痂行会</a></p>

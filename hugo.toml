@@ -24,3 +24,15 @@ logo = "/img/logo.webp"
     meta_og_type = "website"
     meta_og_image = "https://vnovel.pages.dev/img/thumbnail.png"
     
+# ---------- 搜尋所需的 output format（加入到你的 config.toml） ----------
+[outputs]
+  # 讓首頁輸出 HTML 與 JSON（會產生 public/index.json）
+  home = ["HTML", "JSON"]
+
+[outputFormats]
+  [outputFormats.JSON]
+    name = "JSON"
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
