@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang='zh'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+<meta charset="utf-8">
+<i class="dark hidden"></i>
+<title>
+  
+    
+    
+    
+    
+    
+    
+      结痂行会 | 远航船
+    
+  
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href='/favicon-32x32.png'>
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="/css/main.css">
+        
+    </head>
+    
+    
+    <body class="bg-skin flex flex-col min-h-screen dark:bg-black">
+    <header class="bg-rose text-white dark:bg-warmgray-900 dark:text-white" style="font-family: 'title'">
+    <nav class="flex items-center justify-between flex-wrap p-4">
+        <div class="flex items-center flex-shrink-0 text-2xl mx-6">
+          
+            <a href="http://localhost:1313/"><img src="/img/logo.webp" class="w-24 h-auto" /></a>
+          
+        </div>
+        <div class="flex items-center">
+            
+            <div class="hidden md:block mr-4">
+                
+            </div>
+            
+            <button id="theme-toggle" class="focus:outline-none p-2" aria-label="切换日间/夜间模式">
+                <i class="icon-moon text-xl" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    
+    const getCurrentTheme = () => {
+        if (localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    };
+    
+    
+    const initTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun'); 
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        }
+    };
+    
+    
+    const toggleTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun');
+        }
+    };
+    
+    
+    initTheme();
+    
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    
+    window.toggleDarkMode = toggleTheme;
+});
+</script><div class="container mx-auto max-w-7xl my-4 flex-grow" id="content">
+<main class="main-container min-h-[calc(100dvh-64px)] flex items-start md:items-center justify-center py-8 md:py-0">
+  <div class="w-full max-w-xl mx-auto">
+
+    
+    <div class="bg-lace dark:bg-warmgray-700 shadow-sm p-6 md:p-8 rounded-lg">
+      <div class="flex flex-col links-list">
+        
+        <div class="link-item border-t border-gray-300 dark:border-gray-600 mt-6 pt-6 first:mt-0 first:pt-0 first:border-t-0">
+          <a 
+            href="https://example1.com" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow"
+            class="block w-full text-center"
+          >
+            <div class="bg-flora dark:bg-warmgray-800 border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden hover:shadow-lg">
+
+              <div class="banner-wrapper w-full flex justify-center items-center overflow-hidden p-4">
+                <div class="inline-block">
+                  
+                  <img 
+                    src="/img/logo.webp" 
+                    alt="浮浪都 Banner"
+                    class="link-banner mx-auto block"
+                    onerror="this.src='https://ui-avatars.com/api/?name=浮浪都&background=random&color=fff&size=640'"
+                  >
+                  
+                </div>
+              </div>
+
+              
+              <div class="p-2 text-center">
+                <div class="min-w-0">
+                  
+                  <h3 class="text-xl text-gray-800 dark:text-white truncate">
+                    浮浪都
+                  </h3>
+
+                  
+                  <p class="site-title text-gray-600 dark:text-gray-400 text-sm mt-3">
+                    或许我们能在另一个地方再次相见
+                  </p>
+                  
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="link-item border-t border-gray-300 dark:border-gray-600 mt-6 pt-6 first:mt-0 first:pt-0 first:border-t-0">
+          <a 
+            href="https://techblog.com" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow"
+            class="block w-full text-center"
+          >
+            <div class="bg-flora dark:bg-warmgray-800 border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden hover:shadow-lg">
+
+              <div class="banner-wrapper w-full flex justify-center items-center overflow-hidden p-4">
+                <div class="inline-block">
+                  
+                  <img 
+                    src="/img/logo.webp" 
+                    alt="愚者剧场 Banner"
+                    class="link-banner mx-auto block"
+                    onerror="this.src='https://ui-avatars.com/api/?name=愚者剧场&background=random&color=fff&size=640'"
+                  >
+                  
+                </div>
+              </div>
+
+              
+              <div class="p-2 text-center">
+                <div class="min-w-0">
+                  
+                  <h3 class="text-xl text-gray-800 dark:text-white truncate">
+                    愚者剧场
+                  </h3>
+
+                  
+                  <p class="site-title text-gray-600 dark:text-gray-400 text-sm mt-3">
+                    这又是一个示例网站的描述文字，介绍网站的主要内容。
+                  </p>
+                  
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<style>
+ 
+ 
+.links-list .link-item {
+  margin-top: 1.5rem;    
+  padding-top: 1.5rem;   
+
+}
+
+ 
+.links-list .link-item:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+ 
+.site-title {
+  font-family: "IMFellDWPica", "title", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+ 
+.banner-wrapper { display: block; }
+.link-banner {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  image-rendering: auto;
+  -webkit-user-drag: none;
+}
+
+</style>
+
+
+        </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">
+  <div class="container mx-auto px-4">
+    <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">结痂行会</a></p>
+  </div>
+</footer>
+<script>
+  function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+          overlay.classList.toggle("open");
+          hamburger.classList.toggle("is-open");
+          body.classList.toggle("scroll-lock");
+      });
+  }
+  toggleNav();
+
+  var icon = document.getElementById("icon");
+  if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+  } else {
+      document.documentElement.classList.remove('dark')
+  }
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      icon.classList.remove("icon-sun");
+      icon.classList.add("icon-moon");
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    } else {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    }
+  }
+</script>
+
+</body>
+</html>
+

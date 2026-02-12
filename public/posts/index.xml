@@ -9,13 +9,6 @@
     <lastBuildDate>Sun, 25 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>蚌人</title>
-      <link>http://localhost:1313/posts/lore/10/</link>
-      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lore/10/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>疮疤之日</title>
       <link>http://localhost:1313/posts/lore/4/</link>
       <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
@@ -23,21 +16,28 @@
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>胆汁蜜话</title>
+      <link>http://localhost:1313/posts/lore/9/</link>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/lore/9/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;Music is the Night!&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>分裂的岛屿</title>
-      <link>http://localhost:1313/posts/lore/3/</link>
+      <link>http://localhost:1313/posts/lore/2/</link>
       <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lore/3/</guid>
+      <guid>http://localhost:1313/posts/lore/2/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;世界上没有连成一块的大陆，只有零星分布在海洋中的渺小岛屿。&lt;/p&gt;&#xA;&lt;p&gt;有些岛屿质地较轻，经常被海水推动，位置随着时间而挪移，又或者轻易地被巨浪吞噬，在暴风雨中沉没。这样的岛屿并不宜居，但偶尔会出现被船只放逐在此的罪犯，或者极端避世的流浪者。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>环海诸生物</title>
+      <link>http://localhost:1313/posts/lore/10/</link>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/lore/10/</guid>
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>海蛇</title>
-      <link>http://localhost:1313/posts/lore/11/</link>
-      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lore/11/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>活屋</title>
+      <title>黄金狼蛛的罗屋</title>
       <link>http://localhost:1313/posts/lore/8/</link>
       <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/lore/8/</guid>
@@ -58,32 +58,25 @@
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>诗人王</title>
+      <title>食子的诗人王</title>
       <link>http://localhost:1313/posts/lore/5/</link>
       <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/lore/5/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>音乐之夜</title>
-      <link>http://localhost:1313/posts/lore/9/</link>
-      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lore/9/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;Music is the Night!&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;他是至母的情人，肉身成神者，曾经在疮疤之日擢升为半神，掌管传染病和诗歌的领域。&lt;/p&gt;&#xA;&lt;p&gt;他具有太阳的属性，因此诗岛比周遭岛屿的天气更为炎热，正午的太阳将会消灭行走在陆地上的人。岛民们大多数时间不得不躲藏在自己的屋舍之内。&lt;/p&gt;</description>
     </item>
     <item>
       <title>至近的乳母</title>
-      <link>http://localhost:1313/posts/lore/2/</link>
+      <link>http://localhost:1313/posts/lore/3/</link>
       <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lore/2/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;正文。&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/lore/3/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;世界是至母的子宫，海洋是至母的经血。&lt;/p&gt;&#xA;&lt;p&gt;夜晚不能出门。有一种说法称月光直射会对人造成可怖的影响，另一种说法称黄昏降临后的空气将逐渐充满令人窒息的元素，在黎明到来后才彻底消释。&lt;/p&gt;</description>
     </item>
     <item>
       <title>自我吞食的月亮</title>
       <link>http://localhost:1313/posts/lore/1/</link>
       <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/lore/1/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;至母&#34;&gt;至母&lt;/h2&gt;&#xA;&lt;p&gt;世界是至母的子宫，海洋是至母的经血。&lt;/p&gt;&#xA;&lt;p&gt;夜晚不能出门。有一种说法称月光直射会对人造成可怖的影响，另一种说法称黄昏降临后的空气将逐渐充满令人窒息的元素，在黎明到来后才彻底消释。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;世界有头无尾，从其端点以射线般的姿态无限向外延伸，从未有人去过世界尽头。&lt;/p&gt;&#xA;&lt;p&gt;造成这副样貌的原因，有多种说法。一说：世界是一条失败的衔尾蛇，它想要含住自己的尾巴，但却弄错角度，结果朝着无穷延伸出去，离自己的尾巴越来越远，永远无法达到尽头。&lt;/p&gt;</description>
     </item>
     <item>
       <title>黄金</title>
@@ -149,13 +142,6 @@
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;此处是填充……&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>卡西努斯</title>
-      <link>http://localhost:1313/posts/character/2/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/character/2/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;盘旋着，盘旋着，显现出扩张的螺旋，&lt;/p&gt;&#xA;&lt;p&gt;猎鹰不再对驯鹰的人言听计从；&lt;/p&gt;&#xA;&lt;p&gt;万物分崩离析；中心难以为继；&lt;/p&gt;&#xA;&lt;p&gt;任凭混乱无序在世界里恣意妄行，&lt;/p&gt;&#xA;&lt;p&gt;任凭血水搅浑的浪潮恣意滔天，&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>琅图斯</title>
       <link>http://localhost:1313/posts/character/3/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
@@ -184,13 +170,6 @@
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;THOU still unravish&amp;rsquo;d bride of quietness,&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Thou foster-child of silence and slow time,&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Sylvan historian, who canst thus express&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;A flowery tale more sweetly than our rhyme:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;What leaf-fring&amp;rsquo;d legend haunts about thy shape&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Of deities or mortals, or of both,&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;In Tempe or the dales of Arcady?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;What men or gods are these? What maidens loth?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;What mad pursuit? What struggle to escape?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;What pipes and timbrels? What wild ecstasy?&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>诗人王子</title>
-      <link>http://localhost:1313/posts/character/1/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/character/1/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;ldquo;Prophet!&amp;rdquo; said I, &amp;ldquo;thing of evil!—prophet still, if bird or devil!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Whether Tempter sent, or whether tempest tossed thee here ashore,&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Desolate yet all undaunted, on this desert land enchanted—&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;On this home by Horror haunted—tell me truly, I implore—&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>威丁克</title>
       <link>http://localhost:1313/posts/character/8/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
@@ -198,18 +177,39 @@
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;此处是填充……&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>尤安多罗斯</title>
+      <title>尤安</title>
       <link>http://localhost:1313/posts/character/10/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/10/</guid>
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;此处是填充……&lt;/p&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>以物换物</title>
-      <link>http://localhost:1313/posts/tales/2/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tales/2/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;“又想捉弄别人，又想毫发无损。嗯哼，战略家的品质。”梅根闭着一只眼，捧起茶杯。&lt;/p&gt;&#xA;&lt;p&gt;“讥讽，可以用来对付别人，但不是我。”&lt;/p&gt;&#xA;&lt;p&gt;她对友人冷冷的回答不予置评，耸耸肩，掀开盖在腿上的毛毯。扶手椅少了一部分重量，摇晃起来，映照在上面的火光也动了动。&lt;/p&gt;</description>
+      <title>卡西努斯</title>
+      <link>http://localhost:1313/posts/character/2/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/character/2/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;盘旋着，盘旋着，显现出扩张的螺旋，&lt;/p&gt;&#xA;&lt;p&gt;猎鹰不再对驯鹰的人言听计从；&lt;/p&gt;&#xA;&lt;p&gt;万物分崩离析；中心难以为继；&lt;/p&gt;&#xA;&lt;p&gt;任凭混乱无序在世界里恣意妄行，&lt;/p&gt;&#xA;&lt;p&gt;任凭血水搅浑的浪潮恣意滔天，&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>诗人王子</title>
+      <link>http://localhost:1313/posts/character/1/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/character/1/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;行走在诗岛大地上的吟游诗人，已经度过二十年自由时光。&lt;/p&gt;&#xA;&lt;p&gt;父亲是统领这片区域的肉身成神者诗人王，母亲是隐藏在真实世界不露声色的至母，长辈将古代知识、消失的信仰与偏执狂热的性情传承给他，赠予他能够在炽热的正午太阳下行走而不殒命的能力，便从他的生活里抽身离开。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>寄信</title>
+      <link>http://localhost:1313/posts/guestbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/guestbook/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>远航船</title>
+      <link>http://localhost:1313/posts/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/links/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

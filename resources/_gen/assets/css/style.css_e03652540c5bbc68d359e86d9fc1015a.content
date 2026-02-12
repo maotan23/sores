@@ -41,8 +41,8 @@
 }
 @font-face {
   font-family: 'title';
-  src:  url('./fonts/title.ttf') format('truetype');
-  font-weight: bold;
+  src:  url('./fonts/HanYiShuFang.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -1174,6 +1174,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 42rem;
 }
 
+.max-w-xl {
+  max-width: 30rem;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1729,6 +1733,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(151 151 151 / var(--tw-text-opacity));
 }
 
 .dark .dark\:hover\:bg-warmgray-800:hover {

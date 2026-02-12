@@ -8,16 +8,16 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lore/10/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/lore/4/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lore/3/</loc>
+    <loc>http://localhost:1313/posts/lore/9/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lore/11/</loc>
+    <loc>http://localhost:1313/posts/lore/2/</loc>
+    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/lore/10/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lore/8/</loc>
@@ -38,10 +38,7 @@
     <loc>http://localhost:1313/tags/%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lore/9/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/lore/2/</loc>
+    <loc>http://localhost:1313/posts/lore/3/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lore/1/</loc>
@@ -89,9 +86,6 @@
     <loc>http://localhost:1313/tags/%E8%A7%92%E8%89%B2/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/character/2/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/character/3/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -104,23 +98,25 @@
     <loc>http://localhost:1313/posts/character/4/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/character/1/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/character/8/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/character/10/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/tales/2/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/character/2/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/character/1/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/series/chuanghai/</loc>
   </url><url>
     <loc>http://localhost:1313/series/game/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/guestbook/</loc>
   </url><url>
     <loc>http://localhost:1313/series/character/</loc>
   </url><url>
@@ -129,5 +125,7 @@
     <loc>http://localhost:1313/series/tales/</loc>
   </url><url>
     <loc>http://localhost:1313/series/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/links/</loc>
   </url>
 </urlset>

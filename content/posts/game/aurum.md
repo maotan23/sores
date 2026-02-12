@@ -6,6 +6,8 @@ series: "game"
 chapter: 1
 image: "/img/2.webp"
 description: 这是一部纯文字互动小说，共有X个结局，预计游戏时长为XX分钟。
+related_reading:
+  - "posts/lore/8.md"
 ---
 
 <br/><br/>

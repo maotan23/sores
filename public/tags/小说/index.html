@@ -307,8 +307,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     
   
-    
-  
   
   
 </div>
@@ -318,7 +316,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
+<div class="mt-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+    
+    <div class="lg:col-span-1">
+      <div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
   
   <label for="search-input" class="search-label" style="display:block; margin-bottom:0.35rem; font-size:0.95rem;">
     搜索本站文章
@@ -472,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const summaryHtml = highlightUsingMatches(truncate(summaryText, 220), summaryMatches);
 
     return `
-      <article class="search-hit border-t border-gray-100 py-2">
+      <article class="search-hit border-b border-gray-100 py-2">
         <a href="${url}" class="block p-2 no-underline transition duration-100 hover:bg-gray-100">
           <h3 class="text-base" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
           <div class="text-xs" style="margin-top:6px; color:var(--search-date-color);">${escapeHtml(date)}</div>
@@ -514,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .dark {
   --search-input-color: #e5e7eb;
   --search-placeholder-color: #9ca3af;
-  --search-border-color: #374151;
+  --search-border-color: #3A3A3A;
   --search-result-bg-hover: rgba(255,255,255,0.03);
   --search-title-color: #e5e7eb;
   --search-summary-color: #d1d5db;
@@ -592,6 +594,38 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 
+    </div>
+    
+    
+    <div class="lg:col-span-1 flex flex-col items-center">
+      <div class="home-banners">
+  
+  
+  
+  <div class="banner-item">
+    <a href="/posts/links/" class="banner-link">
+      <img src="/img/a.webp" alt="" class="banner-image">
+      <div class="banner-overlay">
+        <h3></h3>
+        
+      </div>
+    </a>
+  </div>
+  
+  <div class="banner-item">
+    <a href="/posts/guestbook/" class="banner-link">
+      <img src="/img/b.webp" alt="" class="banner-image">
+      <div class="banner-overlay">
+        <h3></h3>
+        
+      </div>
+    </a>
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>
 
 
         </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">

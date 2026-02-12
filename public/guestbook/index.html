@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang='zh'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+<meta charset="utf-8">
+<i class="dark hidden"></i>
+<title>
+  
+    
+    
+    
+    
+    
+    
+      结痂行会 | 留言板
+    
+  
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href='/favicon-32x32.png'>
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="/css/main.css">
+        
+    </head>
+    
+    
+    <body class="bg-skin flex flex-col min-h-screen dark:bg-black">
+    <header class="bg-rose text-white dark:bg-warmgray-900 dark:text-white" style="font-family: 'title'">
+    <nav class="flex items-center justify-between flex-wrap p-4">
+        <div class="flex items-center flex-shrink-0 text-2xl mx-6">
+          
+            <a href="http://localhost:1313/"><img src="/img/logo.webp" class="w-24 h-auto" /></a>
+          
+        </div>
+        <div class="flex items-center">
+            
+            <div class="hidden md:block mr-4">
+                
+            </div>
+            
+            <button id="theme-toggle" class="focus:outline-none p-2" aria-label="切换日间/夜间模式">
+                <i class="icon-moon text-xl" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    
+    const getCurrentTheme = () => {
+        if (localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    };
+    
+    
+    const initTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun'); 
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        }
+    };
+    
+    
+    const toggleTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun');
+        }
+    };
+    
+    
+    initTheme();
+    
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    
+    window.toggleDarkMode = toggleTheme;
+});
+</script><div class="container mx-auto max-w-7xl my-4 flex-grow" id="content">
+<div class="min-h-screen">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    
+    <h1 class="text-4xl font-bold mb-8 text-center dark:text-white">
+      留言板
+    </h1>
+    
+    
+    
+    <div class="prose dark:prose-dark max-w-none mb-12 text-center">
+      <p>欢迎在这里留言交流！我会尽快回复。</p>
+
+    </div>
+    
+    
+    
+    <div class="bg-white dark:bg-warmgray-800 rounded-xl shadow-md p-6 md:p-8">
+      <form 
+        id="guestbook-form" 
+        action="https://formspree.io/f/xqelkdjn" 
+        method="POST"
+        class="space-y-6"
+      >
+        
+        <div class="form-group">
+          <label for="name" class="block mb-2 text-gray-700 dark:text-gray-200 font-medium">
+            称呼 *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white dark:bg-warmgray-900 text-gray-800 dark:text-gray-200"
+            placeholder="您的姓名或昵称"
+            maxlength="50"
+          >
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="email" class="block mb-2 text-gray-700 dark:text-gray-200 font-medium">
+            邮箱 *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white dark:bg-warmgray-900 text-gray-800 dark:text-gray-200"
+            placeholder="接收回复的邮箱地址"
+          >
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            此邮箱仅用于回复您的留言，不会公开显示
+          </p>
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="message" class="block mb-2 text-gray-700 dark:text-gray-200 font-medium">
+            留言内容 *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white dark:bg-warmgray-900 text-gray-800 dark:text-gray-200 resize-y"
+            placeholder="请留下您的宝贵留言..."
+            maxlength="1000"
+          ></textarea>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            最多1000个字符
+          </p>
+        </div>
+        
+        
+        <input type="text" name="_gotcha" style="display:none">
+        
+        
+        <div class="text-center">
+          <button
+            type="submit"
+            class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-warmgray-800"
+          >
+            发送留言
+          </button>
+        </div>
+        
+        
+        <div id="form-message" class="hidden mt-4 p-4 rounded-lg text-center"></div>
+        
+        
+        <input type="hidden" name="_subject" value="新留言通知">
+        <input type="hidden" name="_replyto" value="%email%">
+        <input type="hidden" name="_next" value="http://localhost:1313/guestbook/?message=success">
+      </form>
+      
+      
+      <div class="mt-8 pt-6 border-t border-gray-200 dark:border-warmgray-700">
+        <div class="prose dark:prose-dark max-w-none text-sm">
+          <h3 class="text-lg font-semibold mb-3 dark:text-white">留言说明</h3>
+          <ul class="list-disc pl-5 space-y-1 dark:text-gray-300">
+            <li>留言后会收到确认邮件，请确保邮箱填写正确</li>
+            <li>我会在1-3个工作日内通过邮件回复您</li>
+            <li>留言内容不会被公开显示，仅我本人可见</li>
+            <li>请保持友善的交流态度</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('guestbook-form');
+  const messageDiv = document.getElementById('form-message');
+  
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('message') === 'success') {
+    showMessage('留言发送成功！感谢您的留言，我会尽快回复。', 'success');
+  }
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '发送中...';
+    
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        
+        showMessage('留言发送成功！感谢您的留言，我会尽快通过邮件回复您。', 'success');
+        form.reset();
+        
+        
+        setTimeout(() => {
+          window.location.href = form.querySelector('input[name="_next"]').value;
+        }, 3000);
+      } else {
+        throw new Error('提交失败');
+      }
+    })
+    .catch(error => {
+      showMessage('抱歉，提交过程中出现错误。请稍后重试或直接发送邮件至我的邮箱。', 'error');
+      console.error('Form submission error:', error);
+    })
+    .finally(() => {
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
+  });
+  
+  function showMessage(text, type) {
+    messageDiv.textContent = text;
+    messageDiv.className = 'mt-4 p-4 rounded-lg text-center';
+    
+    if (type === 'success') {
+      messageDiv.classList.add('bg-green-100', 'text-green-800', 'dark:bg-green-900', 'dark:text-green-200');
+    } else {
+      messageDiv.classList.add('bg-red-100', 'text-red-800', 'dark:bg-red-900', 'dark:text-red-200');
+    }
+    
+    messageDiv.classList.remove('hidden');
+    
+    
+    setTimeout(() => {
+      messageDiv.classList.add('hidden');
+    }, 5000);
+  }
+  
+  
+  const messageTextarea = document.getElementById('message');
+  const charCount = document.createElement('div');
+  charCount.className = 'text-right text-sm text-gray-500 dark:text-gray-400 mt-1';
+  messageTextarea.parentNode.appendChild(charCount);
+  
+  function updateCharCount() {
+    const current = messageTextarea.value.length;
+    const max = parseInt(messageTextarea.getAttribute('maxlength')) || 1000;
+    charCount.textContent = `${current} / ${max}`;
+    
+    if (current > max * 0.9) {
+      charCount.classList.add('text-yellow-600', 'dark:text-yellow-400');
+    } else {
+      charCount.classList.remove('text-yellow-600', 'dark:text-yellow-400');
+    }
+  }
+  
+  messageTextarea.addEventListener('input', updateCharCount);
+  updateCharCount(); 
+});
+</script>
+
+<style>
+ 
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.95rem;
+  }
+}
+
+ 
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+ 
+.dark .form-group input,
+.dark .form-group textarea {
+  border-color: #4b5563;
+}
+
+.dark .form-group input:focus,
+.dark .form-group textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+ 
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+</style>
+
+        </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">
+  <div class="container mx-auto px-4">
+    <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">结痂行会</a></p>
+  </div>
+</footer>
+<script>
+  function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+          overlay.classList.toggle("open");
+          hamburger.classList.toggle("is-open");
+          body.classList.toggle("scroll-lock");
+      });
+  }
+  toggleNav();
+
+  var icon = document.getElementById("icon");
+  if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+  } else {
+      document.documentElement.classList.remove('dark')
+  }
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      icon.classList.remove("icon-sun");
+      icon.classList.add("icon-moon");
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    } else {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    }
+  }
+</script>
+
+</body>
+</html>
+

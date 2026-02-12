@@ -126,39 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="border-b dark:border-warmgray-700">
         
           <article class="p-6 dark:text-white lg:flex">
-    <a href="http://localhost:1313/posts/lore/1/" aria-label="Read">
-        
-        <img class="rounded mx-auto w-24 h-32 lg:mx-0 mb-5 object-cover lg:mb-0" src="/img/1.webp" alt="thumbnail" />
-        
-    </a>
-    <div class="lg:ml-8">
-        <a href="http://localhost:1313/posts/lore/1/">
-            <h1 class="text-xl mb-2">自我吞食的月亮</h1>
-        </a>
-        <p class="mb-3 text-xs opacity-70">587字</p>
-        </p>
-        
-            <div id="tags">
-                
-                <span
-                    class="inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-600"><a
-                        href="http://localhost:1313/tags/%E4%B8%96%E7%95%8C%E8%A7%82">#世界观</a></span>
-                
-            </div>
-        
-        <p class="text-sm opacity-70">...</p>
-    </div>
-</article>
-
-
-        
-      </div>
-    
-  
-    
-      <div class="border-b dark:border-warmgray-700">
-        
-          <article class="p-6 dark:text-white lg:flex">
     <a href="http://localhost:1313/posts/game/aurum/" aria-label="Read">
         
         <img class="rounded mx-auto w-24 h-32 lg:mx-0 mb-5 object-cover lg:mb-0" src="/img/2.webp" alt="thumbnail" />
@@ -296,6 +263,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
   
     
+      <div class="border-b dark:border-warmgray-700">
+        
+          <article class="p-6 dark:text-white lg:flex">
+    <a href="http://localhost:1313/posts/chuanghai/3/" aria-label="Read">
+        
+        <img class="rounded mx-auto w-24 h-32 lg:mx-0 mb-5 object-cover lg:mb-0" src="/img/3.webp" alt="thumbnail" />
+        
+    </a>
+    <div class="lg:ml-8">
+        <a href="http://localhost:1313/posts/chuanghai/3/">
+            <h1 class="text-xl mb-2">海上庭审</h1>
+        </a>
+        <p class="mb-3 text-xs opacity-70">6026字</p>
+        </p>
+        
+            <div id="tags">
+                
+                <span
+                    class="inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-600"><a
+                        href="http://localhost:1313/tags/%E5%B0%8F%E8%AF%B4">#小说</a></span>
+                
+                <span
+                    class="inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-600"><a
+                        href="http://localhost:1313/tags/%E6%9C%AA%E5%AE%8C%E7%BB%93">#未完结</a></span>
+                
+            </div>
+        
+        <p class="text-sm opacity-70">...</p>
+    </div>
+</article>
+
+
+        
+      </div>
+    
+  
+    
   
     
   
@@ -348,7 +352,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
+<div class="mt-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+    
+    <div class="lg:col-span-1">
+      <div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
   
   <label for="search-input" class="search-label" style="display:block; margin-bottom:0.35rem; font-size:0.95rem;">
     搜索本站文章
@@ -502,7 +510,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const summaryHtml = highlightUsingMatches(truncate(summaryText, 220), summaryMatches);
 
     return `
-      <article class="search-hit border-t border-gray-100 py-2">
+      <article class="search-hit border-b border-gray-100 py-2">
         <a href="${url}" class="block p-2 no-underline transition duration-100 hover:bg-gray-100">
           <h3 class="text-base" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
           <div class="text-xs" style="margin-top:6px; color:var(--search-date-color);">${escapeHtml(date)}</div>
@@ -544,7 +552,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .dark {
   --search-input-color: #e5e7eb;
   --search-placeholder-color: #9ca3af;
-  --search-border-color: #374151;
+  --search-border-color: #3A3A3A;
   --search-result-bg-hover: rgba(255,255,255,0.03);
   --search-title-color: #e5e7eb;
   --search-summary-color: #d1d5db;
@@ -622,6 +630,38 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 
+    </div>
+    
+    
+    <div class="lg:col-span-1 flex flex-col items-center">
+      <div class="home-banners">
+  
+  
+  
+  <div class="banner-item">
+    <a href="/posts/links/" class="banner-link">
+      <img src="/img/a.webp" alt="" class="banner-image">
+      <div class="banner-overlay">
+        <h3></h3>
+        
+      </div>
+    </a>
+  </div>
+  
+  <div class="banner-item">
+    <a href="/posts/guestbook/" class="banner-link">
+      <img src="/img/b.webp" alt="" class="banner-image">
+      <div class="banner-overlay">
+        <h3></h3>
+        
+      </div>
+    </a>
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>
 
 
         </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang='zh'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+<meta charset="utf-8">
+<i class="dark hidden"></i>
+<title>
+  
+    
+    
+    
+    
+    
+    
+      结痂行会 | 寄信
+    
+  
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href='/favicon-32x32.png'>
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="/css/main.css">
+        
+    </head>
+    
+    
+    <body class="bg-skin flex flex-col min-h-screen dark:bg-black">
+    <header class="bg-rose text-white dark:bg-warmgray-900 dark:text-white" style="font-family: 'title'">
+    <nav class="flex items-center justify-between flex-wrap p-4">
+        <div class="flex items-center flex-shrink-0 text-2xl mx-6">
+          
+            <a href="http://localhost:1313/"><img src="/img/logo.webp" class="w-24 h-auto" /></a>
+          
+        </div>
+        <div class="flex items-center">
+            
+            <div class="hidden md:block mr-4">
+                
+            </div>
+            
+            <button id="theme-toggle" class="focus:outline-none p-2" aria-label="切换日间/夜间模式">
+                <i class="icon-moon text-xl" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    
+    const getCurrentTheme = () => {
+        if (localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    };
+    
+    
+    const initTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun'); 
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        }
+    };
+    
+    
+    const toggleTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun');
+        }
+    };
+    
+    
+    initTheme();
+    
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    
+    window.toggleDarkMode = toggleTheme;
+});
+</script><div class="container mx-auto max-w-7xl my-4 flex-grow" id="content">
+<main class="main-container min-h-[calc(100dvh-64px)] flex items-start md:items-center justify-center ">
+  <div class="w-full max-w-2xl mx-auto">
+
+    
+    <div class="bg-lace dark:bg-warmgray-700 shadow-sm p-6 md:p-8 rounded-lg">
+      <form 
+        id="guestbook-form" 
+        action="https://formspree.io/f/xqelkdjn" 
+        method="POST"
+        class="space-y-6"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="form-group">
+            <label for="name" class="block mb-2 text-gray-700 dark:text-white text-sm">
+              称呼
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400 outline-none bg-flora dark:bg-warmgray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 text-sm focus:shadow-sm"
+              placeholder="（选填）"
+              maxlength="50"
+            >
+          </div>
+          
+          
+          <div class="form-group">
+            <label for="email" class="block mb-2 text-gray-700 dark:text-white text-sm">
+              邮箱
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400 outline-none bg-flora dark:bg-warmgray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 text-sm focus:shadow-sm"
+              placeholder="（选填）"
+            >
+            
+          </div>
+        </div>
+        
+        <div class="form-group mt-4"> 
+          <label for="message" class="block mb-3 text-gray-700 dark:text-white font-medium text-sm">
+            留言内容 *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="10"
+            required
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400 outline-none bg-flora dark:bg-warmgray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 resize-y text-sm leading-relaxed h-80 md:h-96"
+            placeholder="请写下想说的话... "
+            maxlength="1000"
+          ></textarea>
+          <div class="flex justify-between mt-2">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              如果您希望收到回信，可以在上方填写收信用的邮箱地址，回信将发至您的邮箱。
+              <br/>
+              以上信息均不会公开，仅网站的建造者可见。
+            </p>
+            <div id="char-count" class="text-xs text-gray-500 dark:text-gray-400">
+              <span id="current-chars">0</span> / 1000
+            </div>
+          </div>
+        </div>
+        
+        
+        <input type="text" name="_gotcha" style="display:none">
+
+        
+        
+        
+        <div class="pt-4">
+          <button
+            type="submit"
+            class="w-full px-6 py-4 text-gray-700 dark:text-white text-base"
+            aria-label="寄信"
+          >
+            寄出信件
+          </button>
+        </div>
+        
+        
+        <div id="form-message" class="hidden mt-4 p-4 text-center"></div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('guestbook-form');
+  const messageDiv = document.getElementById('form-message');
+  const charCount = document.getElementById('char-count');
+  const currentChars = document.getElementById('current-chars');
+  const messageTextarea = document.getElementById('message');
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('message') === 'success') {
+    showMessage('信件已寄出！感谢您的留言。', 'success');
+  }
+  
+  
+  function updateCharCount() {
+    const current = messageTextarea.value.length;
+    const max = parseInt(messageTextarea.getAttribute('maxlength')) || 1000;
+    currentChars.textContent = current;
+    
+    charCount.classList.remove('text-green-600', 'text-yellow-600', 'text-red-600', 'text-gray-500', 'dark:text-gray-400', 'dark:text-green-500', 'dark:text-yellow-500', 'dark:text-red-500');
+    if (current === 0) {
+      charCount.classList.add('text-gray-500', 'dark:text-gray-400');
+    } else if (current <= max * 0.7) {
+      charCount.classList.add('text-green-600', 'dark:text-green-500');
+    } else if (current <= max * 0.9) {
+      charCount.classList.add('text-yellow-600', 'dark:text-yellow-500');
+    } else {
+      charCount.classList.add('text-red-600', 'dark:text-red-500');
+    }
+  }
+  
+  messageTextarea.addEventListener('input', updateCharCount);
+  updateCharCount(); 
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '寄信中...';
+    submitBtn.classList.add('opacity-70');
+    
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        
+        showMessage('信件已寄出！', 'success');
+        form.reset();
+        updateCharCount(); 
+        
+        
+        setTimeout(() => {
+          const nextInput = form.querySelector('input[name="_next"]');
+          if (nextInput && nextInput.value) {
+            window.location.href = nextInput.value;
+          }
+        }, 1500);
+      } else {
+        throw new Error('寄信失败');
+      }
+    })
+    .catch(error => {
+      showMessage('抱歉，寄信过程中出现错误。请稍后重试。', 'error');
+      console.error('Form submission error:', error);
+    })
+    .finally(() => {
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.classList.remove('opacity-70');
+    });
+  });
+  
+  function showMessage(text, type) {
+    messageDiv.textContent = text;
+    messageDiv.className = 'mt-4 p-4 text-center';
+    
+    if (type === 'success') {
+      messageDiv.classList.add('bg-green-50', 'text-green-700', 'dark:bg-green-900/20', 'dark:text-green-300', 'border', 'border-green-200', 'dark:border-green-800/30');
+    } else {
+      messageDiv.classList.add('bg-red-50', 'text-red-700', 'dark:bg-red-900/20', 'dark:text-red-300', 'border', 'border-red-200', 'dark:border-red-800/30');
+    }
+    
+    messageDiv.classList.remove('hidden');
+    
+    
+    setTimeout(() => {
+      messageDiv.classList.add('hidden');
+    }, 5000);
+  }
+});
+</script>
+
+<style>
+ 
+button[type="submit"] {
+  letter-spacing: 0.5px;
+}
+</style>
+
+        </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">
+  <div class="container mx-auto px-4">
+    <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">结痂行会</a></p>
+  </div>
+</footer>
+<script>
+  function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+          overlay.classList.toggle("open");
+          hamburger.classList.toggle("is-open");
+          body.classList.toggle("scroll-lock");
+      });
+  }
+  toggleNav();
+
+  var icon = document.getElementById("icon");
+  if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+  } else {
+      document.documentElement.classList.remove('dark')
+  }
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      icon.classList.remove("icon-sun");
+      icon.classList.add("icon-moon");
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    } else {
+      icon.classList.remove("icon-moon");
+      icon.classList.add("icon-sun");
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    }
+  }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "浮浪都",
+    "url": "https://example1.com",
+    "avatar": "/img/logo.webp",
+    "description": "或许我们能在另一个地方再次相见"
+  },
+  {
+    "name": "愚者剧场",
+    "url": "https://techblog.com",
+    "avatar": "/img/logo.webp",
+    "description": "这又是一个示例网站的描述文字，介绍网站的主要内容。"
+  }
+]
