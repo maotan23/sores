@@ -5,10 +5,10 @@ tags: ["游戏"]
 series: "game"
 chapter: 2
 image: "/img/2.webp"
-description: 这是一部NVL视觉小说，无选择分支，预计游戏时长为10-15分钟。
+description: 这是一部纯文字视觉小说，无选择分支，预计游戏时长为10-15分钟。
 related_reading:
-  - "posts/tales/1.md"
   - "posts/lore/6.md"
+  - "posts/tales/1.md"
 ---
 
 <br/><br/>

@@ -39,17 +39,11 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'title';
-  src:  url('./fonts/HanYiShuFang.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
 @font-face {
   font-family: 'Clear-Han-Serif';
-  src:  url('./fonts/Clear-Han-Serif.ttf') format('truetype'),
-    url('./fonts/Clear-Han-Serif.woff') format('woff');
+  src:  url('./fonts/Clear-Han-Serif.woff2') format('woff2'),
+    url('./fonts/Clear-Han-Serif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -520,10 +514,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .prose {
   color: var(--tw-prose-body);
-  max-width: 65ch;
-  font-family: "IMFellDWPica", "title";
+  max-width: 70ch;
 }
-
 
 .prose :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
   color: var(--tw-prose-lead);
@@ -822,8 +814,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .prose :where(p):not(:where([class~="not-prose"] *)) {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .prose :where(img):not(:where([class~="not-prose"] *)) {
@@ -1002,7 +994,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .mr-8 {
-  margin-right: 2rem;
+  margin-right: 3rem;
+}
+.ml-8 {
+  margin-left: 3rem;
 }
 
 .mr-5 {
@@ -1035,10 +1030,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-3 {
   margin-bottom: 0.75rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
 }
 
 .mt-1 {
@@ -1118,7 +1109,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .h-48 {
-  height: 12rem;
+  height: 10rem;
 }
 
 .h-6 {
@@ -1134,7 +1125,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .w-set {
-  width: 13.5rem;
+  width: 12rem;
 }
 
 .w-14 {
@@ -1175,6 +1166,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .max-w-xl {
+  max-width: 36.5rem;
+}
+
+.max-w-ml {
   max-width: 30rem;
 }
 
@@ -1472,19 +1467,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 
+.text-sm {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.text-sp {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
 .text-base {
   font-size: 1rem;
-  line-height: 1.7rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2088,3 +2088,25 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-4 + .mb-4 {
   margin-top: 1rem;
 }
+
+/* 应用到整个页面 */
+::-webkit-scrollbar {
+  width: 12px;               /* 垂直滚动条宽度 */
+  height: 12px;              /* 水平滚动条高度 */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;       /* 轨道颜色 */
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6d0000;    /* 滑块颜色 */
+  border-radius: 8px;
+  border: 3px solid #f0f0f0; /* 留出内边，让滑块有“空心”效果 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1b50ff;
+}
+

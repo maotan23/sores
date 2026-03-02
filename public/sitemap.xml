@@ -3,10 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/lore/2/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/lore/1/</loc>
+    <lastmod>2026-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lore/4/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
@@ -14,16 +26,10 @@
     <loc>http://localhost:1313/posts/lore/9/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lore/2/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/lore/10/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lore/8/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lore/3/</loc>
@@ -36,12 +42,6 @@
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lore/5/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/lore/1/</loc>
     <lastmod>2026-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/game/aurum/</loc>
@@ -99,9 +99,6 @@
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/character/8/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/character/10/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/character/2/</loc>

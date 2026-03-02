@@ -1,14 +1,20 @@
 [
   {
-    "name": "浮浪都",
+    "name": "第一个名字",
     "url": "https://example1.com",
     "avatar": "/img/logo.webp",
-    "description": "或许我们能在另一个地方再次相见"
+    "description": "这是一个示例网站的描述文字。"
   },
   {
-    "name": "愚者剧场",
+    "name": "第二个名字",
     "url": "https://techblog.com",
     "avatar": "/img/logo.webp",
-    "description": "这又是一个示例网站的描述文字，介绍网站的主要内容。"
+    "description": "这又是一个示例网站的描述文字。"
+  },
+  {
+    "name": "第三个名字",
+    "url": "https://techblog.com",
+    "avatar": "/img/logo.webp",
+    "description": "这又是一个示例网站的描述文字。"
   }
 ]

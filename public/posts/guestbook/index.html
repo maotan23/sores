@@ -179,12 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
         <div class="pt-4">
-          <button
-            type="submit"
-            class="w-full px-6 py-4 text-gray-700 dark:text-white text-base"
-            aria-label="寄信"
-          >
-            寄出信件
+          <button type="submit" class="w-full p-0 border-0 bg-transparent" aria-label="寄信">
+            <img src="/img/-3.webp" alt="寄出信件" class="mx-auto block max-w-full h-auto">
           </button>
         </div>
         
@@ -235,9 +231,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
+    
     submitBtn.disabled = true;
-    submitBtn.textContent = '寄信中...';
+    
     submitBtn.classList.add('opacity-70');
     
     
@@ -273,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .finally(() => {
       
       submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
+      
       submitBtn.classList.remove('opacity-70');
     });
   });
@@ -293,21 +289,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setTimeout(() => {
       messageDiv.classList.add('hidden');
-    }, 5000);
+    }, 3000);
   }
 });
 </script>
 
-<style>
- 
-button[type="submit"] {
-  letter-spacing: 0.5px;
-}
-</style>
 
-        </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'title'">
+
+        </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'IMFellDWPica'">
   <div class="container mx-auto px-4">
-    <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">结痂行会</a></p>
+    <p>&copy; <a href="http://localhost:1313/" class="hover:text-gray-500 duration-200">sores.icu</a></p>
   </div>
 </footer>
 <script>
