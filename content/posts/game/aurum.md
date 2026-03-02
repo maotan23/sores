@@ -25,9 +25,7 @@ related_reading:
 
 游戏引擎：<a href="https://twinery.org/" target="_blank">Twine</a>
 
-英语翻译：
-
-UI模板：<a href="https://vahnya.itch.io/twine-template" target="_blank">Vahnya</a>
+UI模板：<a href="https://itch.io/queue/c/5378590/twine?position=3" target="_blank">nyehilism</a>
 
 <br/>
 
@@ -37,7 +35,7 @@ UI模板：<a href="https://vahnya.itch.io/twine-template" target="_blank">Vahny
 
 （AO3 work id = 74226821）
 
-这部小说讲述了……
+在另一个时空背景下，在1920年代巴黎的假面舞会落幕11年后，在地狱的幻景里，两名主人公相遇的故事。
 
 </center>
 
