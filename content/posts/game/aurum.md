@@ -3,9 +3,9 @@ date: 2025-12-25
 title: "黄金"
 tags: ["游戏"]
 series: "game"
-chapter: 1
+chapter: 2
 image: "/img/2.webp"
-description: 这是一部纯文字互动小说，共有X个结局，预计游戏时长为XX分钟。
+description: 这是一部纯文字互动小说，共有4个结局，预计游戏时长为30分钟。
 related_reading:
   - "posts/lore/8.md"
 ---
@@ -13,7 +13,7 @@ related_reading:
 <br/><br/>
 
 <center>
-游戏本体。
+游戏尚在制作中。
 
 <br/><br/>
 
