@@ -1,5 +1,5 @@
 baseURL = "https://example.org/"
-title = "结痂行会"
+title = "疮痂之歌"
 languageCode = "zh"
 DefaultContentLanguage = "zh"
 enableInlineShortcodes = true
@@ -19,10 +19,10 @@ paginator_pages = "5"
 logo = "/img/logo.webp"
 
   [params.homepage_meta_tags]
-    meta_description = "疮海夜夜狂谭。"
-    meta_og_title = "结痂行会"
+    meta_description = "Cantilena Melancholica Rerum Imperfectarum"
+    meta_og_title = "疮痂之歌"
     meta_og_type = "website"
-    meta_og_image = "https://vnovel.pages.dev/img/thumbnail.png"
+    meta_og_image = "https://vnovel.pages.dev/img/fern.webp"
 
 [outputs]
   home = ["HTML", "JSON"]
