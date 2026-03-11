@@ -15,7 +15,7 @@
   
 </title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" href='/favicon16.ico'>
+<link rel="icon" href='/favicon.ico'>
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="/tags/%E6%B8%B8%E6%88%8F">
             <article class="p-6 flex">
                 <div class="ml-8">
-                    <h1 class="text-xl mb-2 text-blue-500">#游戏 <span class="text-gray-800 dark:text-gray-200">(2)</span></h1>
+                    <h1 class="text-xl mb-2 text-blue-500">#游戏 <span class="text-gray-800 dark:text-gray-200">(1)</span></h1>
                 </div>
             </article>
         </a>
@@ -175,18 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </footer>
 <script>
-  function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
-
-      hamburger.addEventListener("click", function () {
-          overlay.classList.toggle("open");
-          hamburger.classList.toggle("is-open");
-          body.classList.toggle("scroll-lock");
-      });
-  }
-  toggleNav();
 
   var icon = document.getElementById("icon");
   if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

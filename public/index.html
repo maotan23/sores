@@ -149,9 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     
     
-  
-    
-    
       
     
   
@@ -168,10 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
     
     
-      
-    
   
     
+    
+      
     
   
     
@@ -391,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="http://localhost:1313/posts/lore/1/">
             <h1 class="text-xl mb-2">世界辞书</h1>
         </a>
-        <p class="mb-3 text-xs opacity-70">3050字 · 10章</p>
+        <p class="mb-3 text-xs opacity-70">2789字 · 10章</p>
         
         
         
@@ -452,10 +449,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
     
   
-    
-      
-    
-  
   
   
   
@@ -468,18 +461,18 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
   
-  
-  
-  
-  
-  
-
-
-
-
-
-  
     
+  
+  
+  
+  
+  
+  
+
+
+
+
+
   
     
   
@@ -509,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="http://localhost:1313/posts/game/amber/">
             <h1 class="text-xl mb-2">化石与金属</h1>
         </a>
-        <p class="mb-3 text-xs opacity-70">294字 · 2章</p>
+        <p class="mb-3 text-xs opacity-70">176字 · 1章</p>
         
         
         
@@ -921,7 +914,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="http://localhost:1313/posts/character/1/">
             <h1 class="text-xl mb-2">面孔收录</h1>
         </a>
-        <p class="mb-3 text-xs opacity-70">2914字 · 9章</p>
+        <p class="mb-3 text-xs opacity-70">3151字 · 9章</p>
         
         
         
@@ -954,11 +947,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
       <div class="border-b dark:border-warmgray-700">
-        
-<div class="v-tarot-minimal border-b dark:border-warmgray-700 bg-gray-50 dark:bg-warmgray-800" aria-live="polite">
+        <div class="v-tarot-minimal border-b dark:border-warmgray-700 bg-gray-50 dark:bg-warmgray-800" aria-live="polite">
   <div class="v-main">
     
-    <div id="v-tarot-card" class="v-card" role="button" tabindex="0" aria-label="塔罗牌 — 点击抽取">
+    <div id="v-tarot-card" class="v-card" role="button" tabindex="0" aria-label="卡牌 — 点击抽取">
       <div class="v-card-inner" aria-hidden="true">
         <div class="v-face v-face-back">
           <div class="v-sigil">✶</div>
@@ -975,8 +967,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     <div class="v-controls-right">
-      <div id="v-title" class="v-title text-xl dark:text-white mb-2">每日塔罗</div>
-      <button id="v-draw-btn" class="v-btn text-base dark:text-white" type="button">抽取今日塔罗</button>
+      <div id="v-title" class="v-title text-xl dark:text-white mb-2">每日斐哩</div>
+      <button id="v-draw-btn" class="v-btn text-base dark:text-white" type="button">抽取今日卡牌</button>
       <div id="v-meta" class="v-meta text-xs text-gray-600 dark:text-gray-300 mt-2">
         <div id="v-meta-result"></div>
         <div id="v-meta-next" style="margin-top:4px;"></div>
@@ -1225,28 +1217,26 @@ document.addEventListener('DOMContentLoaded', function() {
  
 (function(){
   const TAROT = [
-    {name: "愚者 (The Fool)", meaning: "新的开始、信心与冒险。"},
-    {name: "魔术师 (The Magician)", meaning: "行动力、资源与创造力。"},
-    {name: "女祭司 (The High Priestess)", meaning: "直觉、潜意识与等待时机。"},
-    {name: "女皇 (The Empress)", meaning: "丰饶、养育与创作。"},
-    {name: "皇帝 (The Emperor)", meaning: "秩序、权威与结构。"},
-    {name: "教皇 (The Hierophant)", meaning: "传统、学习与指引。"},
-    {name: "恋人 (The Lovers)", meaning: "关系、选择与价值观。"},
-    {name: "战车 (The Chariot)", meaning: "意志、胜利与掌控。"},
-    {name: "力量 (Strength)", meaning: "勇气、温柔的力量与自制。"},
-    {name: "隐士 (The Hermit)", meaning: "内省、寻找答案与独处。"},
-    {name: "命运之轮 (Wheel of Fortune)", meaning: "变动、周期与机遇。"},
-    {name: "正义 (Justice)", meaning: "平衡、因果与公平。"},
-    {name: "倒吊人 (The Hanged Man)", meaning: "换位思考、暂停与牺牲。"},
-    {name: "死神 (Death)", meaning: "终结与新生（象征转变）。"},
-    {name: "节制 (Temperance)", meaning: "平衡、和谐与耐心。"},
-    {name: "恶魔 (The Devil)", meaning: "束缚、诱惑与觉察。"},
-    {name: "高塔 (The Tower)", meaning: "突发变故、真相与重建。"},
-    {name: "星星 (The Star)", meaning: "希望、疗愈与灵感。"},
-    {name: "月亮 (The Moon)", meaning: "潜意识、迷惑与直觉。"},
-    {name: "太阳 (The Sun)", meaning: "成功、喜悦与清晰。"},
-    {name: "审判 (Judgement)", meaning: "觉醒、评估与重生。"},
-    {name: "世界 (The World)", meaning: "完成、成就与圆满。"}
+    {name: "疮痂之歌", meaning: "缺失、幻灭。"},
+    {name: "燕子", meaning: "感知冷暖，劳碌筑屋。"},
+    {name: "血泉", meaning: "献祭、殉难。"},
+    {name: "泥土", meaning: "倦怠、休憩。"},
+    {name: "解药", meaning: "检查被遗忘的事物。"},
+    {name: "眼睛", meaning: "对鼻尖的仇恨。"},
+    {name: "琥珀", meaning: "改换层次观察世界。"},
+    {name: "黄金", meaning: "时间停驻。"},
+    {name: "酸地牢", meaning: "失而复得复失。"},
+    {name: "蛇", meaning: "持续的渴求。"},
+    {name: "夜", meaning: "未卜先知、沉溺未知。"},
+    {name: "日", meaning: "适宜、安神、走动。"},
+    {name: "黄昏", meaning: "变动、无序、不可知。"},
+    {name: "正午", meaning: "激情、盲目、躁狂。"},
+    {name: "王子", meaning: "遗忘、分裂。"},
+    {name: "公主", meaning: "怀念、贪恋。"},
+    {name: "将军", meaning: "嫉妒滋生恐惧。"},
+    {name: "酋长", meaning: "朝向阴影生存。"},
+    {name: "水手", meaning: "磨损、耗竭。"},
+    {name: "人皮商人", meaning: "创造、超验。"}
   ];
 
   const KEY = 'hugo_tarot_draw_vintage_v1_minimal';
@@ -1300,12 +1290,11 @@ document.addEventListener('DOMContentLoaded', function() {
       showCard(rec.idx);
       drawBtn.disabled = true;
       drawBtn.textContent = '今日已抽取';
-      metaResult.textContent = `你今天已抽：${TAROT[rec.idx].name}。`;
-      metaNext.textContent = `下次可抽：${nextDateStr(new Date())}`;
+      metaResult.textContent = `今天，你抽到的是：${TAROT[rec.idx].name}。`;
     } else {
       hideCard();
       drawBtn.disabled = false;
-      drawBtn.textContent = '抽取今日塔罗';
+      drawBtn.textContent = '抽取今日卡牌';
       metaResult.textContent = '每天一次 · 基于本地时区。';
       metaNext.textContent = '';
     }
@@ -1317,8 +1306,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(rec && rec.date === today){
       drawBtn.disabled = true;
       drawBtn.textContent = '今日已抽取';
-      metaResult.textContent = `你今天已抽：${TAROT[rec.idx].name}。`;
-      metaNext.textContent = `下次可抽：${nextDateStr(new Date())}`;
+      metaResult.textContent = `今天，你抽到的是：${TAROT[rec.idx].name}。`;
       return;
     }
     const idx = Math.floor(Math.random() * TAROT.length);

@@ -15,7 +15,7 @@
   
 </title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" href='/favicon16.ico'>
+<link rel="icon" href='/favicon.ico'>
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -119,39 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  
-    
-      <div class="border-b dark:border-warmgray-700">
-        
-          <article class="p-6 dark:text-white lg:flex">
-    <a href="http://localhost:1313/posts/game/aurum/" aria-label="Read">
-        
-        <img class="rounded mx-auto w-24 h-32 lg:mx-0 mb-5 object-cover lg:mb-0" src="/img/2.webp" alt="thumbnail" />
-        
-    </a>
-    <div class="lg:ml-8">
-        <a href="http://localhost:1313/posts/game/aurum/">
-            <h1 class="text-xl mb-2">黄金</h1>
-        </a>
-        <p class="mb-3 text-xs opacity-70">118字</p>
-        </p>
-        
-            <div id="tags">
-                
-                <span
-                    class="inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-600"><a
-                        href="http://localhost:1313/tags/%E6%B8%B8%E6%88%8F">#游戏</a></span>
-                
-            </div>
-        
-        <p class="text-sm opacity-70">这是一部纯文字互动小说，共有4个结局，预计游戏时长为30分钟...</p>
-    </div>
-</article>
-
-
-        
-      </div>
-    
   
     
       <div class="border-b dark:border-warmgray-700">
@@ -503,18 +470,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </footer>
 <script>
-  function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
-
-      hamburger.addEventListener("click", function () {
-          overlay.classList.toggle("open");
-          hamburger.classList.toggle("is-open");
-          body.classList.toggle("scroll-lock");
-      });
-  }
-  toggleNav();
 
   var icon = document.getElementById("icon");
   if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

@@ -21,7 +21,7 @@
   
 </title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" href='/favicon16.ico'>
+<link rel="icon" href='/favicon.ico'>
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -315,8 +315,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <div>
           <h1 class="title text-lg my-3">琅图斯</h1>
-          <p class="mb-3 text-xs opacity-70">290字</p>
-          <p class="text-sm opacity-80">他们己厌倦了动荡荒凉的海洋。于是有人说道：“我们不再回家园。”</p>
+          <p class="mb-3 text-xs opacity-70">329字</p>
+          <p class="text-sm opacity-80">他们己厌倦了动荡荒凉的海洋。于是有人说道：“我们不再回家乡。”</p>
           
           <div id="tags">
             
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
           </div>
           
-          <h4 id="date" class="text-xs opacity-70">最近更新时间：2025/03/23</h4>
+          <h4 id="date" class="text-xs opacity-70">最近更新时间：2025/01/01</h4>
         </div>
       </div>
 
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p><br/><br/></p>
 <h3 id="简介">简介</h3>
 <hr>
-<p>琅图斯是一个被抢救的溺水者。曾经发生在双头岛屿的海难带走了不少居民，又送来了不少浮尸，他便是少有的几个吐掉海水、恢复清醒的幸运儿之一。</p>
+<p>琅图斯是一个被抢救的溺水者。曾经发生在双头岛屿的海难带走了不少居民，又送来了不少浮尸，他便是少有的几个吐掉海水、恢复清醒的幸运儿之一。在悬崖上的教会（即琅图斯被抢救的地方），他受到过一段时间的照看，还学会了认字。</p>
 <p>他对自己的故乡和由来闭口不谈，保持着神神秘秘的态度，但又表现出一种兜不住心事的性格，时常因为小偷小盗被送进监狱，或者因为试图逃狱而被关押更长时间。从十六岁到十八岁，他有一份角斗士的工作，但在杀死一名显贵的对手后抱头鼠窜，立刻投奔了一艘靠岸的海盗船，开始了水手生涯，途径许多不同岛屿，再次犯罪、被捕、逃狱、远航，如此反复。</p>
 <p>到了二十岁这年，他再也无处可逃，正在监狱里百无聊赖地抠手指时，得到了命运的眷顾和一份货船上的工作。</p>
 <br/>
@@ -731,18 +731,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </footer>
 <script>
-  function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
-
-      hamburger.addEventListener("click", function () {
-          overlay.classList.toggle("open");
-          hamburger.classList.toggle("is-open");
-          body.classList.toggle("scroll-lock");
-      });
-  }
-  toggleNav();
 
   var icon = document.getElementById("icon");
   if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

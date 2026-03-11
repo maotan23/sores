@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/lore/2/</link>
       <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/lore/2/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;由于广阔的海洋和分裂的岛屿，居民彼此链接的方式往往只有航船。船只的来源主要有以下几种：其一是结痂行会专门征召海员、使用高级材料打造的中到大型货船；其二是富人使用的昂贵私家船；其三是捕鱼船&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;分裂的岛屿&#34;&gt;分裂的岛屿&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;世界上没有连成一块的大陆，只有零星分布在海洋中的渺小岛屿。&lt;/p&gt;&#xA;&lt;p&gt;有些岛屿质地较轻，经常被海水推动，位置随着时间而挪移，又或者轻易地被巨浪吞噬，在暴风雨中沉没。这样的岛屿并不宜居，但偶尔会出现被船只放逐在此的罪犯，或者极端避世的流浪者。&lt;/p&gt;</description>
     </item>
     <item>
       <title>自我吞食的月亮</title>
@@ -79,13 +79,6 @@
       <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;他是至母的情人，肉身成神者，曾经在疮疤之日擢升为半神，掌管传染病和诗歌的领域。&lt;/p&gt;&#xA;&lt;p&gt;他具有太阳的属性，因此诗岛比周遭岛屿的天气更为炎热，正午的太阳将会消灭行走在陆地上的人。岛民们大多数时间不得不躲藏在自己的屋舍之内。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>黄金</title>
-      <link>http://localhost:1313/posts/game/aurum/</link>
-      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/game/aurum/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;center&gt;&#xD;&#xA;游戏尚在制作中。&#xD;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://lyeto.itch.io/aurum&#34; target=&#34;_blank&#34;&gt;访问该游戏的 Itch 页面&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;&#xA;&lt;p&gt;游戏引擎：&lt;a href=&#34;https://twinery.org/&#34; target=&#34;_blank&#34;&gt;Twine&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;UI模板：&lt;a href=&#34;https://itch.io/queue/c/5378590/twine?position=3&#34; target=&#34;_blank&#34;&gt;nyehilism&lt;/a&gt;&lt;/p&gt;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://archiveofourown.org/works/74226821&#34; target=&#34;_blank&#34;&gt;《我心焚烧》by Osoira&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;（AO3 work id = 74226821）&lt;/p&gt;&#xA;&lt;p&gt;在另一个时空背景下，在1920年代巴黎的假面舞会落幕11年后，在地狱的幻景里，两名主人公相遇的故事。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>琥珀</title>
       <link>http://localhost:1313/posts/game/amber/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
@@ -125,28 +118,28 @@
       <link>http://localhost:1313/posts/character/9/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/9/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;奥柯出生于海员之家，生活平稳舒适，毫无波澜，他也顺理成章地被培养成一名导航员，有丰富的航海经验。在他的青少年时期，曾一度想靠航船前往世界尽头，但这显然是痴人说梦，大家都把他当作白痴嘲笑，他便慢慢不说这些话了，过着循规蹈矩的生活。奥柯是一个乏味的人，除了航海，他很少对什么事物产生兴趣，对于众人公认的神明，以及一系列奇迹和感召，他都毫无感受，又想要扮演成虔诚的模样，又扮演得十分笨拙。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;奥柯出生于海员之家，接受过良好的教育，顺理成章地成为一名导航员。在他十几岁的时候，他曾一度梦想靠航船前往世界尽头，但大家都把他当作白痴嘲笑。因此他收敛自己，过上循规蹈矩的生活。除了航海，他很少对什么事物产生兴趣，对于众人公认的神明，以及一系列奇迹和感召，他都毫无感受。&lt;/p&gt;</description>
     </item>
     <item>
       <title>白胡椒</title>
       <link>http://localhost:1313/posts/character/5/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/5/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;“白胡椒”出生在胆汁群岛南侧&lt;/p&gt;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;h3 id=&#34;插画&#34;&gt;插画&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;figure class=&#34;mx-auto max-w-prose&#34;&gt;&#xD;&#xA;  &lt;img src=&#34;http://localhost:1313/img/bhj.webp&#34;&#xD;&#xA;       alt=&#34;肖像&#34;&#xD;&#xA;       class=&#34;block mx-auto h-auto&#34; /&gt;&#xD;&#xA;  &lt;figcaption class=&#34;text-center text-xs text-gray-500 opacity-60&#34;&gt;&#xD;&#xA;    绘制：暮光Ruins&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;&lt;/figure&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;“白胡椒”出生在胆汁群岛南侧的地下洞窟，他所属的族群为了避开日夜交替的影响，依照传统长居于地下。他有七名兄弟姐妹，自身排行倒数第二。他的身躯异常庞大，导致在矮小族人挖掘的地道里穿梭不畅，日常的进食量也比别人更大。出于这种简单的理由，他被赶出了洞窟，需要靠自己劳作应付生活。&lt;/p&gt;</description>
     </item>
     <item>
       <title>基塔</title>
       <link>http://localhost:1313/posts/character/7/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/7/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;基塔是一个拾荒者的女儿，从小随父母一起在苹果群岛翻捡垃圾维生，也做过体力活，考虑过成为工匠学徒，但因付不起学费而不了了之。&lt;/p&gt;&#xA;&lt;p&gt;十七岁时，她嫁给经常购买废品的铁匠，一年后，她生下一个孩子。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;基塔是一个拾荒者的女儿，出生于苹果群岛，从小随父母一起翻捡垃圾、贩卖材料维生，做过水手，擅长体力活，考虑过成为工匠学徒，但因付不起学费而不了了之。她在十六岁时嫁给一名铁匠，一年后生下孩子。她和丈夫一家同住在市场区背后的贫民窟，自己分到的房间位于倾倒排泄物的水沟附近。由于分娩时受到剪刀划伤感染，孩子在出生不久后便死去。丈夫要求她偿还过去一年间的经济开销，但基塔的父亲拒绝为其出钱，因此她被诉讼入狱。&lt;/p&gt;</description>
     </item>
     <item>
       <title>琅图斯</title>
       <link>http://localhost:1313/posts/character/3/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/3/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;琅图斯是一个被抢救的溺水者。曾经发生在双头岛屿的海难带走了不少居民，又送来了不少浮尸，他便是少有的几个吐掉海水、恢复清醒的幸运儿之一。&lt;/p&gt;&#xA;&lt;p&gt;他对自己的故乡和由来闭口不谈，保持着神神秘秘的态度，但又表现出一种兜不住心事的性格，时常因为小偷小盗被送进监狱，或者因为试图逃狱而被关押更长时间。从十六岁到十八岁，他有一份角斗士的工作，但在杀死一名显贵的对手后抱头鼠窜，立刻投奔了一艘靠岸的海盗船，开始了水手生涯，途径许多不同岛屿，再次犯罪、被捕、逃狱、远航，如此反复。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;琅图斯是一个被抢救的溺水者。曾经发生在双头岛屿的海难带走了不少居民，又送来了不少浮尸，他便是少有的几个吐掉海水、恢复清醒的幸运儿之一。在悬崖上的教会（即琅图斯被抢救的地方），他受到过一段时间的照看，还学会了认字。&lt;/p&gt;</description>
     </item>
     <item>
       <title>老鼠</title>
@@ -160,7 +153,7 @@
       <link>http://localhost:1313/posts/character/6/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/6/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;参加过一场古老战事的士兵，死后被死神占据身体。曾经和命运女神是一对搭档，但被其视为弃子，于是隐瞒身份继续做船上的大副，计划着积攒力量、向昔日的搭档复仇。和结痂行会（一个由神祇主导、有雇佣水手和支持航海业等多种功能的跨岛屿组织）有合作关系，因此才参与了任务。表面上严肃、教条主义，会用最有效和最直接的办法来处理争端，譬如鸣枪警告和突然使用暴力杀鸡儆猴。他了解每一个船员的过往经历和内心弱点，但是没有人知道他的来历。他有强烈的军官气质，说一不二，站姿挺拔，严守秩序，并且会惩罚违纪者，但不会表现出任何超出职责的冲动，只在时机合适时快速解决问题。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;里尔是一名有丰富航海经验的船员。据他所述，初次出海前，他一直在家乡担任刽子手，负责砍下法律认定的死刑犯的头颅。后因亲戚从事航海和进出口生意，他才开始学做水手。其后的生涯虽布满危险，但总体而言中规中矩。他遵守规则，谨言慎行，未曾做过越轨的事情，他身材中等、长相平庸、资产恰好够用，没有显赫背景，没有婚姻，没有留下过犯错的记录，没什么故事好说。&lt;/p&gt;</description>
     </item>
     <item>
       <title>若南</title>
@@ -174,14 +167,14 @@
       <link>http://localhost:1313/posts/character/8/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/8/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;此处是填充……&lt;/p&gt;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;h3 id=&#34;插画&#34;&gt;插画&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;figure class=&#34;mx-auto max-w-prose&#34;&gt;&#xD;&#xA;  &lt;img src=&#34;http://localhost:1313/img/wdk.webp&#34;&#xD;&#xA;       alt=&#34;肖像&#34;&#xD;&#xA;       class=&#34;block mx-auto h-auto&#34; /&gt;&#xD;&#xA;  &lt;figcaption class=&#34;text-center text-xs text-gray-500 opacity-60&#34;&gt;&#xD;&#xA;    绘制：暮光Ruins&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;&lt;/figure&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;威丁克是一名出生于北风岛屿的贵族。在当地，贵族通常是因为侍奉神祗获取过巨大财富并且世代传承的人，往往会有永生者辅佐。威丁克是独生子，受到良好的教育，他的家庭教师便是一位永生者，也是一位从事地下法术研究的学者。因此他利用对世界历史和信仰的知识，还有自己的资产和声望，顺理成章地加入了结痂行会，以管理者的身份跨越海洋。他懂得一些水性，会领队作战，但并没有太多航海方面的经验。&lt;/p&gt;</description>
     </item>
     <item>
       <title>卡西努斯</title>
       <link>http://localhost:1313/posts/character/2/</link>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/character/2/</guid>
-      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;卡西努斯在胆汁群岛的一个山羊棚屋长大，母亲早逝，父亲是当地的屠夫。小时候，他被认为是一个聪慧早熟的孩子，总是插手家中各类事务，小到记住每样物品的摆放位置、每夜关窗锁门，大到买卖牲畜和经营羊奶生意、从街上拽走痴心于观看砍头或是醉酒闹事的父亲。渐渐地，他也认为自己的水平高于常人，暗下决心要脱离胆汁群岛混乱无序的环境。十五岁时，他没能说服父亲分给自己一笔钱，因此抢走钱财一走了之，购买船票前往北风岛屿求学。他做足准备要成为一个值得尊敬的人，但直到抵达学院，从旁人的反应才了解到自己身上有浓烈的体臭，这将他精心打造的第一印象和今后的人缘破坏无遗，关于臭味的诨号取代了他在校时的真名。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;卡西努斯在胆汁群岛的一个山羊棚屋长大，母亲早逝，父亲是当地的屠夫。小时候，他被认为是一个聪慧早熟的孩子，总是插手家中各类事务，小到记住每样物品的摆放位置、每夜关窗锁门，大到买卖牲畜和经营羊奶生意、从街上拽走痴心于观看砍头或是醉酒闹事的父亲。渐渐地，他也认为自己的水平高于常人，暗下决心要脱离胆汁群岛混乱无序的环境。&lt;/p&gt;</description>
     </item>
     <item>
       <title>诗人王子</title>

@@ -15,7 +15,7 @@
   
 </title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" href='/favicon16.ico'>
+<link rel="icon" href='/favicon.ico'>
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -317,18 +317,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </footer>
 <script>
-  function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
-
-      hamburger.addEventListener("click", function () {
-          overlay.classList.toggle("open");
-          hamburger.classList.toggle("is-open");
-          body.classList.toggle("scroll-lock");
-      });
-  }
-  toggleNav();
 
   var icon = document.getElementById("icon");
   if (document.documentElement.classList.contains("dark") || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
