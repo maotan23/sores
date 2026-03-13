@@ -4,17 +4,5 @@
     "url": "https://example1.com",
     "avatar": "/img/logo.webp",
     "description": "这是一个示例网站的描述文字。"
-  },
-  {
-    "name": "第二个名字",
-    "url": "https://techblog.com",
-    "avatar": "/img/logo.webp",
-    "description": "这又是一个示例网站的描述文字。"
-  },
-  {
-    "name": "第三个名字",
-    "url": "https://techblog.com",
-    "avatar": "/img/logo.webp",
-    "description": "这又是一个示例网站的描述文字。"
   }
 ]
