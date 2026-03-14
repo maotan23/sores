@@ -34,3 +34,7 @@ logo = "/img/logo.webp"
     baseName = "index"
     isPlainText = true
     notAlternative = true
+
+[submodule "themes/vnovel"]
+    path = themes/vnovel
+    url = https://github.com/opera7133/vnovel
