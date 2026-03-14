@@ -1,0 +1,98 @@
+{{ define "main" }}
+<h2 class="text-4xl py-3 dark:text-white">{{if not .IsHome}}#{{ .Title }}{{end}}</h2>
+
+{{ $template := "summary" }}
+{{ $pages := .Pages }}
+
+{{ if .IsHome }}
+  {{ $template = "series-summary" }}
+  
+  {{ $seriesNames := slice }}
+  {{ range $p := where site.RegularPages "Params.series" "ne" nil }}
+    {{ $s := $p.Params.series }}
+    {{ if not (in $seriesNames $s) }}
+      {{ $seriesNames = $seriesNames | append $s }}
+    {{ end }}
+  {{ end }}
+
+  {{ $seriesPages := slice }}
+  {{ range $name := $seriesNames }}
+    {{ $sp := site.GetPage (printf "section/%s" $name) }}
+    {{ if $sp }}
+      {{ $seriesPages = $seriesPages | append $sp }}
+    {{ else }}
+      {{ $first := index (where site.RegularPages "Params.series" $name) 0 }}
+      {{ if $first }}
+        {{ $seriesPages = $seriesPages | append $first }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  
+  {{ $pages = $seriesPages }}
+  {{ .Scratch.Set "Paginator" (.Paginate $pages (.Site.Params.paginator_pages)) }}
+{{ end }}
+
+{{ $paginator := .Scratch.Get "Paginator" }}
+{{ if not $paginator }}
+  {{ $paginator = .Paginator }}
+{{ end }}
+
+
+{{ $showCustomContent := and .IsHome (eq $paginator.PageNumber 1) }}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {{ range $index, $p := $paginator.Pages }}
+    {{ if lt $index 5 }}
+      <div class="border-b dark:border-warmgray-700">
+        {{ if eq $template "series-summary" }}
+          {{ partial "series-summary.html" $p }}
+        {{ else }}
+          {{ $p.Render "summary" }}
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+  
+  {{ if $showCustomContent }}
+    {{/* 确保只有5篇文章时显示自定义内容 */}}
+    {{ if le (len $paginator.Pages) 5 }}
+      <div class="border-b dark:border-warmgray-700">
+        {{ partial "fortune.html" . }}
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+{{ partial "paginator.html" . }}
+
+<!-- 将search、图片和banner放在同一行（第一banner 左，搜索 中，第二banner 右） -->
+<div class="mt-8">
+  {{/* 定义两个banner的数据（也可以从站点参数或数据文件读取） */}}
+  {{ $banners := slice
+    (dict "image" "/img/a.webp" "link" "/posts/links/" "title" "Banner A")
+    (dict "image" "/img/b.webp" "link" "/posts/guestbook/" "title" "Banner B")
+  }}
+  {{ $b0 := index $banners 0 }}
+  {{ $b1 := index $banners 1 }}
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+    <!-- 第一 banner：左侧（大屏左对齐） -->
+    <div class="flex justify-center lg:justify-start">
+      <a href="{{ $b0.link }}" class="block">
+        <img src="{{ $b0.image }}" alt="{{ $b0.title }}" class="max-w-full h-auto w-48 sm:w-64 banner-image">
+      </a>
+    </div>
+
+    <!-- Search：中间（始终水平居中） -->
+    <div class="flex justify-center">
+      {{ partial "search.html" . }}
+    </div>
+
+    <!-- 第二 banner：右侧（大屏右对齐） -->
+    <div class="flex justify-center lg:justify-end">
+      <a href="{{ $b1.link }}" class="block">
+        <img src="{{ $b1.image }}" alt="{{ $b1.title }}" class="max-w-full h-auto w-48 sm:w-64 banner-image">
+      </a>
+    </div>
+  </div>
+</div>
+
+{{ end }}

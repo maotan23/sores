@@ -1,0 +1,82 @@
+<header class="bg-rose text-white dark:bg-warmgray-900 dark:text-white" style="font-family: 'title'">
+    <nav class="flex items-center justify-between flex-wrap p-4">
+        <div class="flex items-center flex-shrink-0 text-2xl mx-6">
+          {{ if .Site.Params.logo }}
+            <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo }}" class="w-24 h-auto" /></a>
+          {{ else }}
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+          {{ end }}
+        </div>
+        <div class="flex items-center">
+            <!-- 主要菜单链接 -->
+            <div class="hidden md:block mr-4">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="hover:text-gray-500 duration-200 mr-4">
+                    {{ .Name }}
+                </a>
+                {{ end }}
+            </div>
+            <!-- 主题切换按钮 -->
+            <button id="theme-toggle" class="focus:outline-none p-2" aria-label="切换日间/夜间模式">
+                <i class="icon-moon text-xl" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<script>
+// 主题切换功能
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // 检查本地存储的主题偏好
+    const getCurrentTheme = () => {
+        if (localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    };
+    
+    // 初始化主题
+    const initTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun'); // 假设您有太阳图标
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        }
+    };
+    
+    // 切换主题
+    const toggleTheme = () => {
+        const currentTheme = getCurrentTheme();
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('icon-sun');
+            themeIcon.classList.add('icon-moon');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('icon-moon');
+            themeIcon.classList.add('icon-sun');
+        }
+    };
+    
+    // 初始化
+    initTheme();
+    
+    // 绑定点击事件
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // 如果原来有全局的toggleDarkMode函数，保持兼容性
+    window.toggleDarkMode = toggleTheme;
+});
+</script>

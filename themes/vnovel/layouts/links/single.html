@@ -1,0 +1,88 @@
+{{ define "main" }}
+<main class="main-container min-h-[calc(100dvh-64px)] flex">
+  <div class="w-full max-w-ml mx-auto">
+
+    <div class="bg-lace dark:bg-warmgray-700 p-6">
+      <div class="flex flex-col links-list">
+        {{ range .Site.Data.links }}
+        <div class="link-item border-t border-gray-300 dark:border-gray-600">
+          <a 
+            href="{{ .url }}" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow"
+            class="block w-full text-center"
+          >
+            <div class="border-gray-300 dark:border-gray-600 overflow-hidden hover:shadow-lg">
+
+              <div class="banner-wrapper w-full flex justify-center items-center overflow-hidden p-4">
+                <div class="inline-block">
+                  {{ if .avatar }}
+                  <img 
+                    src="{{ .avatar }}" 
+                    alt="{{ .name }} Banner"
+                    class="link-banner mx-auto block"
+                    onerror="this.src='https://ui-avatars.com/api/?name={{ .name }}&background=random&color=fff&size=640'"
+                  >
+                  {{ else }}
+                  <div class="w-full h-36 md:h-44 flex items-center justify-center text-gray-900 dark:text-gray-100">
+                    {{ .name }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+
+              <!-- 内容区（全部居中） -->
+              <div class="bg-flora dark:bg-warmgray-800 p-4 text-center">
+                <div class="min-w-0">
+                  <h3 class="text-xl text-gray-800 dark:text-white">
+                    {{ .name }}
+                  </h3>
+
+                  {{ if .description }}
+                  <p class="site-title text-gray-600 dark:text-gray-400 text-sm mt-3">
+                    {{ .description }}
+                  </p>
+                  {{ end }}
+              </div>
+            </div>
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<style>
+/* 备用 CSS：如果 Tailwind 类不被构建（或你在本地测试时看不到效果），此处提供原生选择器保证显示 */
+/* 让 .link-item 之间显示分割线且有间距（只在非首项显示） */
+.links-list .link-item {
+  margin-top: 1.5rem;   /* 相当于 mt-6 */
+  padding-top: 1.5rem;  /* 相当于 pt-6 */
+
+}
+
+/* 去掉第一项的分割线和上方间距 */
+.links-list .link-item:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Banner 图片：保持原始比例并居中显示 */
+.banner-wrapper { display: block; }
+.link-banner {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  image-rendering: auto;
+  -webkit-user-drag: none;
+}
+
+</style>
+
+{{ end }}

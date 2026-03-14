@@ -1,0 +1,36 @@
+{{- partial "analytics" . -}}
+{{- if .Site.Params.Analytics.Yandexmetrica.Enabled -}}
+{{ partial "metrica.html" . }}
+{{- end -}}
+<meta charset="utf-8">
+<i class="dark hidden"></i>
+<title>
+  {{ if .IsHome }}
+    {{ site.Title }}
+  {{ else }}
+    {{ $seriesTitle := "" }}
+    {{ if isset .Params "series" }}
+      {{ $seriesName := .Params.series }}
+      {{ $seriesPage := .Site.GetPage (printf "/series/%s" $seriesName) }}
+      {{ if $seriesPage }}
+        {{ $seriesTitle = $seriesPage.Title }}
+      {{ end }}
+    {{ end }}
+    
+    {{ if $seriesTitle }}
+      {{ $seriesTitle }} | {{ .Title }}
+    {{ else }}
+      {{ site.Title }} | {{ .Title }}
+    {{ end }}
+  {{ end }}
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href='{{ "/favicon.ico" | relURL }}'>
+{{ $styles := resources.Get "css/style.css" | postCSS }}
+{{ if hugo.IsServer }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+{{ else }}
+{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+{{ end }}
+<link href='{{ "/css/style.min.css" | relURL }}' rel="stylesheet" type="text/css">

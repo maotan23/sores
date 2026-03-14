@@ -1,0 +1,25 @@
+<div class="home-banners">
+  {{ $banners := slice 
+    (dict 
+      "image" "/img/a.webp" 
+      "link" "/posts/links/" 
+
+    ) 
+    (dict 
+      "image" "/img/b.webp" 
+      "link" "/posts/guestbook/" 
+    ) 
+  }}
+  
+  {{ range $banners }}
+  <div class="banner-item">
+    <a href="{{ .link }}" class="banner-link">
+      <img src="{{ .image }}" alt="{{ .title }}" class="banner-image">
+      <div class="banner-overlay">
+        <h3>{{ .title }}</h3>
+        {{ with .desc }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </a>
+  </div>
+  {{ end }}
+</div>

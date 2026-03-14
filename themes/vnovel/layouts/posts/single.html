@@ -1,0 +1,264 @@
+{{ define "main" }}
+<div class="flex min-h-screen flex-col">
+  <!-- 主要内容区域，使用flex-grow确保footer在底部 -->
+  <div class="flex-grow flex max-w-7xl mx-auto">
+    <!-- 左侧：合集导航 -->
+    <div class="hidden lg:block lg:w-1/4 mr-8">
+      {{ partial "series-chapters.html" . }}
+    </div>
+
+    <!-- 中间：文章主体 -->
+    <div class=" dark:text-white">
+      <!-- 文章简介 -->
+      <div class="bg-lace dark:bg-warmgray-700 lg:flex p-7 mx-auto max-w-xl">
+        {{ if .Params.image }}
+        <img class="rounded mx-auto w-auto h-48 lg:ml-0 lg:mr-8" src="{{ .Params.image | relURL }}" alt="thumbnail"/>
+        {{ else }}
+        <img class="rounded mx-auto w-auto h-48 lg:ml-0 lg:mr-8" src="{{ "/img/novel.png" | relURL }}" alt="thumbnail"/>
+        {{ end }}
+        <div>
+          <h1 class="title text-lg my-3">{{ .Title }}</h1>
+          <p class="mb-3 text-xs opacity-70">{{ .Content | countwords }}字</p>
+          <p class="text-sm opacity-80">{{ replaceRE "(https?://[a-zA-Z0-9\\-._~:/?#\\[\\]@!\\$&'()*\\+,;%=]+)" "<a href=\"$1\" class=\"text-blue-500 opacity-100 hover:text-blue-700 focus:text-blue-700\">$1</a>" .Description | safeHTML }}</p>
+          {{ with .Params.tags }}
+          <div id="tags">
+            {{ range . }}
+            <span class="text-sm inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-500"><a href="{{ "tags" | absURL}}/{{ . | urlize }}">#{{ . }}</a></span>
+            {{ end }}
+          </div>
+          {{ end }}
+          <h4 id="date" class="text-xs opacity-70">最近更新时间：{{ .Date.Format "2006/01/02" }}</h4>
+        </div>
+      </div>
+
+      <!-- 文章正文 -->
+      <div class="bg-flora dark:bg-warmgray-800 pt-14 border-t border-b dark:border-warmgray-800 px-10 sm:px-10">
+        <div class="mx-auto max-w-xl">
+          <div class="prose dark:prose-dark text-sp py-3">
+
+            {{ .Content }}
+            
+            <!-- 下一章跳转按钮 -->
+            {{ if .Params.series }}
+              {{ $curSeries := .Params.series }}
+              {{ $curPage := . }}
+              
+              <!-- 获取当前页面的章节数字 -->
+              {{ $curNum := 0 }}
+              {{ with .Params.chapter }}
+                {{ $raw := . }}
+                {{ $s := printf "%v" $raw }}
+                {{ $digits := replaceRE "[^0-9-]" "" $s }}
+                {{ if ne $digits "" }}
+                  {{ $curNum = int $digits }}
+                {{ end }}
+              {{ end }}
+              
+              <!-- 获取同系列的所有文章 -->
+              {{ $chapters := where site.RegularPages "Params.series" $curSeries }}
+              {{ if gt (len $chapters) 0 }}
+                {{ $items := slice }}
+                {{ range $chap := $chapters }}
+                  {{ $raw := $chap.Params.chapter }}
+                  {{ $num := 0 }}
+                  {{ with $raw }}
+                    {{ $s := printf "%v" . }}
+                    {{ $digits := replaceRE "[^0-9-]" "" $s }}
+                    {{ if ne $digits "" }}
+                      {{ $num = int $digits }}
+                    {{ end }}
+                  {{ end }}
+                  {{ $items = $items | append (dict "num" $num "page" $chap) }}
+                {{ end }}
+                
+                {{ $items = sort $items "num" "asc" }}
+                
+                <!-- 寻找下一章 -->
+                {{ $foundNext := false }}
+                {{ $nextPage := dict }}
+                {{ range $items }}
+                  {{ if and (gt .num $curNum) (not $foundNext) }}
+                    {{ $nextPage = .page }}
+                    {{ $foundNext = true }}
+                  {{ end }}
+                {{ end }}
+                
+                <!-- 如果有下一章则显示 -->
+                {{ if $foundNext }}
+                  <div class="text-center">
+                      <a href="{{ $nextPage.RelPermalink }}" class="inline-block transition-transform duration-200 hover:scale-105" title="继续阅读下一章">
+                        <img src="{{ "/img/-1.webp" | relURL }}" alt="继续阅读下一章"/>
+                      </a>
+                  </div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            
+            <!-- 返回主页链接 -->
+            <div class="text-center">
+                <a href="{{ "/" | relURL }}" class="inline-block transition-transform duration-200 hover:scale-105" title="返回主页">
+                  <img src="{{ "/img/-2.webp" | relURL }}" alt="返回主页"/>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧内容 -->
+    <div class="hidden lg:block lg:w-1/4 ml-8">
+
+      <!-- 章节导航 -->
+      <div class="mb-4">
+        <nav class="rounded-lg border border-gray-200 dark:border-warmgray-700 bg-flora dark:bg-warmgray-800 p-4 w-auto mb-4">
+          <h3 class="text-base font-bold mb-2 pb-2 border-b border-gray-200 dark:border-warmgray-700 dark:text-white">章节导航</h3>
+          
+          <!-- 返回主页 -->
+          <a href="{{ "/" | relURL }}" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              返回主页
+            </div>
+          </a>
+          
+          <!-- 上一章/下一章逻辑 -->
+          {{ if .Params.series }}
+            {{ $curSeries := .Params.series }}
+            {{ $curPage := . }}
+            
+            <!-- 获取当前页面的章节数字 -->
+            {{ $curNum := 0 }}
+            {{ with .Params.chapter }}
+              {{ $raw := . }}
+              {{ $s := printf "%v" $raw }}
+              {{ $digits := replaceRE "[^0-9-]" "" $s }}
+              {{ if ne $digits "" }}
+                {{ $curNum = int $digits }}
+              {{ end }}
+            {{ end }}
+            
+            <!-- 获取同系列的所有文章 -->
+            {{ $chapters := where site.RegularPages "Params.series" $curSeries }}
+            {{ if gt (len $chapters) 0 }}
+              {{ $items := slice }}
+              {{ range $chap := $chapters }}
+                {{ $raw := $chap.Params.chapter }}
+                {{ $num := 0 }}
+                {{ with $raw }}
+                  {{ $s := printf "%v" . }}
+                  {{ $digits := replaceRE "[^0-9-]" "" $s }}
+                  {{ if ne $digits "" }}
+                    {{ $num = int $digits }}
+                  {{ end }}
+                {{ end }}
+                {{ $items = $items | append (dict "num" $num "page" $chap) }}
+              {{ end }}
+              
+              {{ $items = sort $items "num" "asc" }}
+              
+              <!-- 寻找上一章和下一章 -->
+              {{ $prevPage := dict }}
+              {{ $nextPage := dict }}
+              {{ $foundCurrent := false }}
+              
+              {{ range $i, $item := $items }}
+                {{ if eq $item.page.RelPermalink $curPage.RelPermalink }}
+                  {{ $foundCurrent = true }}
+                  <!-- 上一章 -->
+                  {{ if gt $i 0 }}
+                    {{ $prevPage = index $items (sub $i 1) }}
+                  {{ end }}
+                  <!-- 下一章 -->
+                  {{ if lt $i (sub (len $items) 1) }}
+                    {{ $nextPage = index $items (add $i 1) }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              
+              <!-- 上一章 -->
+              {{ if $prevPage.page }}
+                <a href="{{ $prevPage.page.RelPermalink }}" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+                  <div class="text-gray-900 dark:text-gray-100 text-sm">
+                    上一章
+                  </div>
+                </a>
+              {{ else }}
+                <div class="block px-2 py-1 rounded">
+                  <div class="text-gray-500 dark:text-gray-400 text-sm">
+                    已是第一章
+                  </div>
+                </div>
+              {{ end }}
+              
+              <!-- 下一章 -->
+              {{ if $nextPage.page }}
+                <a href="{{ $nextPage.page.RelPermalink }}" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+                  <div class="text-gray-900 dark:text-gray-100 text-sm">
+                    下一章
+                  </div>
+                </a>
+              {{ else }}
+                <div class="block px-2 py-1 rounded">
+                  <div class="text-gray-500 dark:text-gray-400 text-sm">
+                    已是最后一章
+                  </div>
+                </div>
+              {{ end }}
+              
+            {{ else }}
+              <!-- 如果没有找到系列文章 -->
+              <div class="block px-2 py-1 rounded">
+                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                  已是第一章
+                </div>
+              </div>
+              <div class="block px-2 py-1 rounded">
+                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                  已是最后一章
+                </div>
+              </div>
+            {{ end }}
+          {{ else }}
+            <!-- 如果没有系列参数 -->
+            <div class="block px-2 py-1 rounded">
+              <div class="text-gray-500 dark:text-gray-400 text-sm">
+                已是第一章
+              </div>
+            </div>
+            <div class="block px-2 py-1 rounded">
+              <div class="text-gray-500 dark:text-gray-400 text-sm">
+                已是最后一章
+              </div>
+            </div>
+          {{ end }}
+        </nav>
+      </div>
+
+      <!-- 相关阅读 -->
+      {{ if .Params.related_reading }}
+        {{ $relatedPages := slice }}
+        {{ range $rel := .Params.related_reading }}
+          {{ $page := site.GetPage $rel }}
+          {{ if $page }}
+            {{ $relatedPages = $relatedPages | append $page }}
+          {{ end }}
+        {{ end }}
+        
+        {{ if gt (len $relatedPages) 0 }}
+        <div class="mb-4">
+          <nav class="rounded-lg border border-gray-200 dark:border-warmgray-700 bg-flora dark:bg-warmgray-800 p-4 w-auto">
+            <h3 class="text-base font-bold mb-2 pb-2 border-b border-gray-200 dark:border-warmgray-700 dark:text-white">相关阅读</h3>
+            {{ range $relPage := $relatedPages }}
+              <a href="{{ $relPage.RelPermalink }}" target="_blank" class="block px-2 py-1 rounded transition-all duration-150 hover:bg-gray-100 dark:hover:bg-warmgray-700">
+                <div class="text-gray-900 dark:text-gray-100 text-sm">
+                  {{ $relPage.Title }}
+                </div>
+              </a>
+            {{ end }}
+          </nav>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

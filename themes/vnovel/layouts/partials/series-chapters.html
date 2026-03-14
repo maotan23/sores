@@ -1,0 +1,37 @@
+{{/* layouts/partials/series-chapters.html */}}
+{{ $cur := . }}
+{{ if $cur.Params.series }}
+  {{ $seriesName := $cur.Params.series }}
+  {{ $chapters := where site.RegularPages "Params.series" $seriesName }}
+  {{ if gt (len $chapters) 0 }}
+    {{ $items := slice }}
+    {{ range $chap := $chapters }}
+      {{ $raw := $chap.Params.chapter }}
+      {{ $num := 0 }}
+      {{ with $raw }}
+        {{ $s := printf "%v" . }}
+        {{ $digits := replaceRE "[^0-9-]" "" $s }}
+        {{ if ne $digits "" }}
+          {{ $num = int $digits }}
+        {{ end }}
+      {{ end }}
+      {{ $items = $items | append (dict "num" $num "page" $chap) }}
+    {{ end }}
+    {{ $items = sort $items "num" "asc" }}
+
+    <nav class="hidden lg:block w-auto">
+      <div class="rounded-lg border border-gray-200 dark:border-warmgray-700 bg-flora dark:bg-warmgray-800 p-4 overflow-auto max-h-[calc(100vh-8rem)]">
+        <h3 class="text-base font-bold mb-3 pb-3 border-b border-gray-200 dark:border-warmgray-700 dark:text-white">章节目录</h3>
+        {{ range $i, $it := $items }}
+          {{ $p := $it.page }}
+          {{ $isCur := eq $p.RelPermalink $cur.RelPermalink }}
+          <a href="{{ $p.RelPermalink }}" class="block px-2 py-1 rounded transition-all duration-150 {{ if $isCur }}bg-lace dark:bg-warmgray-700 font-semibold{{ else }}hover:bg-gray-100 dark:hover:bg-warmgray-700{{ end }}">
+            <div class="text-gray-900 dark:text-gray-100 text-sm">
+              {{ with $p.Params.chapter }}第{{ . }}章 {{ end }}{{ $p.Title }}
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    </nav>
+  {{ end }}
+{{ end }}

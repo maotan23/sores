@@ -1,0 +1,391 @@
+<div class="v-tarot-minimal border-b dark:border-warmgray-700 bg-gray-50 dark:bg-warmgray-800" aria-live="polite">
+  <div class="v-main">
+    <!-- 卡牌（左侧）- 调整为和封面图片相同尺寸 -->
+    <div id="v-tarot-card" class="v-card" role="button" tabindex="0" aria-label="卡牌 — 点击抽取">
+      <div class="v-card-inner" aria-hidden="true">
+        <div class="v-face v-face-back">
+          <div class="v-sigil">✶</div>
+        </div>
+
+        <div class="v-face v-face-front" id="v-card-front">
+          <div class="v-card-content">
+            <div id="v-card-name" class="v-card-name text-xs font-bold">点击抽牌</div>
+            <div id="v-card-meaning" class="v-card-meaning text-xs text-white dark:text-gray-200">每日一则简短指引</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 控件（右侧） -->
+    <div class="v-controls-right">
+      <div id="v-title" class="v-title text-xl dark:text-white mb-2">每日斐哩</div>
+      <button id="v-draw-btn" class="v-btn text-base dark:text-white" type="button">抽取今日卡牌</button>
+      <div id="v-meta" class="v-meta text-xs text-gray-600 dark:text-gray-300 mt-2">
+        <div id="v-meta-result"></div>
+        <div id="v-meta-next" style="margin-top:4px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* 继承站点字体 */
+.v-tarot-minimal {
+  font-family: inherit;
+  padding: 1.5rem; /* 与 site article 的 p-6 等价，保证垂直对齐 */
+  margin-top: 0;
+  background: transparent;
+  border: none;
+  color: inherit;
+  box-shadow: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 200ms, border-color 200ms;
+}
+
+/* 与文章卡片等高容器 */
+.v-main {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start; /* 顶部对齐（改为 flex-start） */
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 128px; /* 与封面图片高度一致（h-32） */
+}
+
+/* 卡牌样式 - 调整为封面图片相同尺寸 (w-24 h-32) */
+.v-card {
+  width: 6rem; /* w-24 */
+  height: 8rem; /* h-32 */
+  perspective: 600px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  flex: 0 0 auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 100ms;
+}
+
+.v-card:hover {
+  transform: translateY(-1px);
+}
+
+.v-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  transform-style: preserve-3d;
+  transition: transform 520ms cubic-bezier(.22,.9,.25,1);
+  box-shadow: none;
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.dark .v-card-inner {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.v-card.is-flipped .v-card-inner {
+  transform: rotateY(180deg);
+}
+
+.v-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.25rem; /* rounded */
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.v-face-back {
+  background: linear-gradient(180deg, #d1cfcb 0%, #964848 100%);
+  border: 1px solid rgba(0,0,0,0.04);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .v-face-back {
+  background: linear-gradient(180deg, #1f1f1f 0%, #964848 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.v-sigil {
+  font-size: 18px;
+  line-height: 1;
+  color: rgba(0,0,0,0.5);
+  opacity: 0.9;
+}
+
+.dark .v-sigil {
+  color: rgba(255,255,255,0.6);
+}
+
+.v-face-front {
+  transform: rotateY(180deg);
+  background: #964848;
+  padding: 12px;
+  text-align: center;
+  color: inherit;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.dark .v-face-front {
+  background: #964848;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* 卡片内部文字 */
+.v-card-name {
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  text-align: center;
+  color: inherit;
+  font-size: 1.25rem; /* text-xs */
+  line-height: 1.2;
+}
+
+.v-card-meaning {
+  font-weight: 500;
+  line-height: 1.3;
+  max-height: 4.5em;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 4px;
+  border-top: 1px dashed rgba(0,0,0,0.06);
+  font-size: 0.7rem;
+}
+
+.dark .v-card-meaning {
+  color: rgba(255,255,255,0.8);
+  border-top: 1px dashed rgba(255,255,255,0.06);
+}
+
+/* 右侧控件 */
+.v-controls-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  min-width: 160px;
+  flex: 1;
+}
+
+/* 标题 */
+.v-title {
+  margin-bottom: 0.5rem;
+  margin-top: 0; /* 确保没有上边距 */
+  color: inherit;
+  opacity: 0.95;
+}
+
+/* 按钮 - 平面简朴风格 */
+.v-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.125rem;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 150ms, border-color 150ms;
+  font-size: 0.75rem;
+}
+
+.dark .v-btn {
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.v-btn:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.dark .v-btn:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.v-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 元信息 */
+.v-meta {
+  margin-top: 0.5rem;
+  color: rgba(0,0,0,0.6);
+  font-style: italic;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.dark .v-meta {
+  color: rgba(255,255,255,0.6);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .v-main {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    min-height: auto;
+  }
+  
+  .v-controls-right {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .v-meta {
+    text-align: center;
+  }
+  
+  /* 移动端保持相同尺寸 */
+  .v-card {
+    width: 6rem;
+    height: 8rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .v-main {
+    gap: 1rem;
+  }
+}
+</style>
+
+<script>
+/* JS 牌堆 */
+(function(){
+  const TAROT = [
+    {name: "疮痂之歌", meaning: "缺失、幻灭"},
+    {name: "燕子", meaning: "感知冷暖，劳碌筑屋"},
+    {name: "血泉", meaning: "献祭、殉难"},
+    {name: "泥土", meaning: "倦怠、休憩"},
+    {name: "解药", meaning: "检查被遗忘的事物。"},
+    {name: "眼睛", meaning: "对鼻尖的仇恨"},
+    {name: "琥珀", meaning: "改换层次观察世界"},
+    {name: "黄金", meaning: "时间停驻"},
+    {name: "酸地牢", meaning: "失而复得复失"},
+    {name: "蛇", meaning: "持续的渴求"},
+    {name: "夜", meaning: "未卜先知、沉溺未知"},
+    {name: "日", meaning: "适宜、安神、走动"},
+    {name: "黄昏", meaning: "变动、无序、不可知"},
+    {name: "正午", meaning: "激情、盲目、躁狂"},
+    {name: "王子", meaning: "遗忘、分裂"},
+    {name: "公主", meaning: "怀念、贪恋"},
+    {name: "将军", meaning: "嫉妒滋生恐惧"},
+    {name: "酋长", meaning: "朝向阴影生存"},
+    {name: "水手", meaning: "磨损、耗竭"},
+    {name: "人皮商人", meaning: "创造、超验"}
+  ];
+
+  const KEY = 'hugo_tarot_draw_vintage_v1_minimal';
+
+  // DOM refs
+  const card = document.getElementById('v-tarot-card');
+  const drawBtn = document.getElementById('v-draw-btn');
+  const nameEl = document.getElementById('v-card-name');
+  const meaningEl = document.getElementById('v-card-meaning');
+  const metaResult = document.getElementById('v-meta-result');
+  const metaNext = document.getElementById('v-meta-next');
+
+  function localDateStr(d = new Date()){
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2,'0');
+    const dd = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${dd}`;
+  }
+  function nextDateStr(d = new Date()){
+    const t = new Date(d);
+    t.setDate(t.getDate() + 1);
+    return localDateStr(t);
+  }
+
+  function loadRecord(){
+    try {
+      const raw = localStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch(e) { return null; }
+  }
+  function saveRecord(date, idx){
+    localStorage.setItem(KEY, JSON.stringify({date, idx}));
+  }
+
+  function showCard(idx){
+    const t = TAROT[idx];
+    nameEl.textContent = t.name;
+    meaningEl.textContent = t.meaning;
+    card.classList.add('is-flipped');
+  }
+  function hideCard(){
+    card.classList.remove('is-flipped');
+    nameEl.textContent = '点击抽牌';
+    meaningEl.textContent = '每日一则简短指引';
+  }
+
+  function init(){
+    const rec = loadRecord();
+    const today = localDateStr();
+    if(rec && rec.date === today && typeof rec.idx === 'number'){
+      showCard(rec.idx);
+      drawBtn.disabled = true;
+      drawBtn.textContent = '今日已抽取';
+      metaResult.textContent = `今天，你抽到的是：${TAROT[rec.idx].name}。`;
+    } else {
+      hideCard();
+      drawBtn.disabled = false;
+      drawBtn.textContent = '抽取今日卡牌';
+      metaResult.textContent = '每天一次 · 基于本地时区。';
+      metaNext.textContent = '';
+    }
+  }
+
+  function draw(){
+    const rec = loadRecord();
+    const today = localDateStr();
+    if(rec && rec.date === today){
+      drawBtn.disabled = true;
+      drawBtn.textContent = '今日已抽取';
+      metaResult.textContent = `今天，你抽到的是：${TAROT[rec.idx].name}。`;
+      return;
+    }
+    const idx = Math.floor(Math.random() * TAROT.length);
+    saveRecord(today, idx);
+    showCard(idx);
+    drawBtn.disabled = true;
+    drawBtn.textContent = '今日已抽取';
+    metaResult.textContent = `你抽到：${TAROT[idx].name}。`;
+    metaNext.textContent = `属灵日期：${today}`;
+    // 轻微的显隐动画
+    try {
+      card.animate([{opacity:0.97},{opacity:1}], {duration:300, easing:'ease-out'});
+    } catch(e){}
+  }
+
+  // 绑定事件
+  drawBtn.addEventListener('click', draw);
+  card.addEventListener('click', function(){
+    const rec = loadRecord();
+    const today = localDateStr();
+    if(rec && rec.date === today) return;
+    draw();
+  });
+  card.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+  });
+
+  // init on load
+  init();
+})();
+</script>

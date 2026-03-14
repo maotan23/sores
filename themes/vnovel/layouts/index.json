@@ -1,0 +1,29 @@
+{{- /* layouts/index.json - 生成站內文章索引為 JSON (public/index.json) */ -}}
+{{- /* 篩掉 Draft，接著在迴圈內跳過 Params.private 為 true 的頁面 */ -}}
+{{- $pages := where .Site.RegularPages "Draft" "ne" true -}}
+[
+{{- $sep := "" -}}
+{{- range $i, $p := $pages -}}
+  {{- /* 如果有 Params.private，且其值為 boolean true 或字串 "true"，則跳過 */ -}}
+  {{- $isPrivate := false -}}
+  {{- with $p.Params.private -}}
+    {{- /* 支援 boolean true 或字串 "true" */ -}}
+    {{- if or (eq . true) (eq . "true") -}}
+      {{- $isPrivate = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $isPrivate -}}
+    {{- printf "%s" $sep -}}
+    {
+      "title": {{ $p.Title | jsonify }},
+      "url": {{ $p.Permalink | jsonify }},
+      "date": {{ $p.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+      "summary": {{ $p.Summary | plainify | truncate 300 | jsonify }},
+      "content": {{ $p.Plain | plainify | truncate 3000 | jsonify }},
+      "tags": {{ $p.Params.tags | default (slice) | jsonify }},
+      "categories": {{ $p.Params.categories | default (slice) | jsonify }}
+    }
+    {{- $sep = "," -}}
+  {{- end -}}
+{{- end -}}
+]

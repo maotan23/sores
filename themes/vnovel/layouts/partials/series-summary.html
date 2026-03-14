@@ -1,0 +1,133 @@
+{{ $page := . }}
+
+{{/* ===== 计算系列信息 ===== */}}
+{{ $seriesName := "" }}
+{{ $seriesPage := $page }}
+
+{{/* 确定系列名称和系列页面 */}}
+{{ if $page.Params.series }}
+  {{/* 如果是单篇文章，但有 series 参数 */}}
+  {{ $seriesName = $page.Params.series }}
+  {{ $seriesPage = site.GetPage (printf "/series/%s" $seriesName) }}
+  {{ if not $seriesPage }}
+    {{ $seriesPage = $page }} {{/* 回退到当前页面 */}}
+  {{ end }}
+{{ else if eq $page.Kind "section" }}
+  {{/* 如果已经是系列页面 */}}
+  {{ $seriesName = path.Base $page.File.Dir }}
+  {{ $seriesPage = $page }}
+{{ end }}
+
+{{/* ===== 获取系列下的所有文章并按章节排序 ===== */}}
+{{ $seriesArticles := slice }}
+{{ $firstChapter := $page }} {{/* 默认第一章节是当前页面 */}}
+
+{{ if $seriesName }}
+  {{/* 获取该系列的所有文章 */}}
+  {{ $pages := where site.RegularPages "Params.series" $seriesName }}
+  {{ if not $pages }}
+    {{ $pages = $seriesPage.Pages }}
+  {{ end }}
+  
+  {{/* 按章节排序（假设有 chapter 参数） */}}
+  {{ $sortedPages := slice }}
+  {{ range $pages }}
+    {{ if .Params.chapter }}
+      {{ $sortedPages = $sortedPages | append . }}
+    {{ end }}
+  {{ end }}
+  
+  {{/* 按 chapter 参数排序 */}}
+  {{ $sortedPages = sort $sortedPages "Params.chapter" "asc" }}
+  
+  {{/* 找到第一个章节（chapter=1） */}}
+  {{ range $sortedPages }}
+    {{ if eq .Params.chapter 1 }}
+      {{ $firstChapter = . }}
+      {{ break }}
+    {{ end }}
+  {{ end }}
+  
+  {{/* 如果没有找到 chapter=1，取排序后的第一篇文章 */}}
+  {{ if eq $firstChapter $page }}
+    {{ $firstChapter = index $sortedPages 0 }}
+  {{ end }}
+  
+  {{/* 如果还是没有，回退到系列页面 */}}
+  {{ if not $firstChapter }}
+    {{ $firstChapter = $seriesPage }}
+  {{ end }}
+  
+  {{ $seriesArticles = $sortedPages }}
+{{ end }}
+
+{{/* ===== 计算系列总字数 ===== */}}
+{{ $totalWords := 0 }}
+{{ if $seriesName }}
+  {{ range $seriesArticles }}
+    {{ $totalWords = add $totalWords (countwords .Content) }}
+  {{ end }}
+{{ else }}
+  {{ $totalWords = countwords $page.Content }}
+{{ end }}
+
+{{/* ===== 显示信息 ===== */}}
+{{ $displayTitle := $seriesPage.Title }}
+{{ $displayDescription := $seriesPage.Description }}
+{{ $link := $firstChapter.Permalink }} {{/* 关键修改：链接指向第一章节 */}}
+
+{{/* 如果没有系列页面描述，使用当前页面的描述 */}}
+{{ if not $displayDescription }}
+  {{ $displayDescription = $page.Description }}
+{{ end }}
+{{ if not $displayDescription }}
+  {{ $displayDescription = $page.Params.description }}
+{{ end }}
+{{ if not $displayDescription }}
+  {{ $displayDescription = $page.Summary }}
+{{ end }}
+
+<article class="p-6 dark:text-white lg:flex">
+    <a href="{{ $link }}" aria-label="Read">
+        {{/* 优先使用系列页面的图片，否则使用当前页面的图片 */}}
+        {{ $image := $seriesPage.Params.image }}
+        {{ if not $image }}
+          {{ $image = $page.Params.image }}
+        {{ end }}
+        
+        {{ if $image }}
+        <img class="mx-auto w-24 h-32 lg:mx-0 mb-5 object-cover lg:mb-0" src="{{ $image | relURL }}" alt="thumbnail" />
+        {{ else }}
+        <img class="mx-auto w-auto h-32 lg:mx-0 mb-5 lg:mb-0" src="{{ "/img/novel.png" | relURL }}" alt="thumbnail" />
+        {{ end }}
+    </a>
+    <div class="lg:ml-8 text-center md:text-left">
+        <a href="{{ $link }}">
+            <h1 class="text-xl mb-2">{{ $displayTitle }}</h1>
+        </a>
+        <p class="mb-3 text-xs opacity-70">{{ $totalWords }}字{{ if gt (len $seriesArticles) 0 }} · {{ len $seriesArticles }}章{{ end }}</p>
+        
+        {{/* 优先显示系列页面的标签，否则显示当前页面的标签 */}}
+        {{ $tags := $seriesPage.Params.tags }}
+        {{ if not $tags }}
+          {{ $tags = $page.Params.tags }}
+        {{ end }}
+        {{ with $tags }}
+            <div id="tags">
+                {{ range . }}
+                <span class="inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-600">
+                    <a href="{{ "tags" | absURL}}/{{ . | urlize }}">#{{ . }}</a>
+                </span>
+                {{ end }}
+            </div>
+        {{ end }}
+        
+        <p class="text-sm opacity-70">
+          {{ if $displayDescription }}
+            {{ $displayDescription | plainify | truncate 50 }}
+          {{ else }}
+            {{ $page.Summary | plainify | truncate 50 }}
+          {{ end }}
+        </p>
+    </div>
+</article>
