@@ -37,4 +37,4 @@ logo = "/img/logo.webp"
 
 [submodule "themes/vnovel"]
     path = themes/vnovel
-    url = https://github.com/opera7133/vnovel
+    url = https://github.com/opera7133/vnovel.git
