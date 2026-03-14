@@ -14,7 +14,7 @@ related_reading:
 <br/><br/>
 
 <center>
-<iframe src="/game/Amber/index.html"
+<iframe src="/game/amber/index.html"
         style="width:100%;aspect-ratio:4/3;border:4px solid #444;display:block;max-height:80vh;"
         allow="fullscreen; encrypted-media;">
 </iframe>
