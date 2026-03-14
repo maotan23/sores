@@ -34,3 +34,5 @@ logo = "/img/logo.webp"
     baseName = "index"
     isPlainText = true
     notAlternative = true
+
+googleAnalytics = ""
