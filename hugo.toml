@@ -35,4 +35,5 @@ logo = "/img/logo.webp"
     isPlainText = true
     notAlternative = true
 
-googleAnalytics = ""
+[services.googleAnalytics]
+ID = ""
