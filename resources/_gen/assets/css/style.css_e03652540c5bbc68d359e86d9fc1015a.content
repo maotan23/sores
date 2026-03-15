@@ -1183,7 +1183,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .max-w-ml {
-  max-width: 30rem;
+  max-width: 20rem;
 }
 
 .flex-shrink-0 {

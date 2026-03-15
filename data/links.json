@@ -2,7 +2,14 @@
   {
     "name": "浮浪都",
     "url": "https://furouto.flowus.cn/",
-    "avatar": "/img/logo.webp",
-    "description": "https://furouto.flowus.cn/"
+    "avatar": "",
+    "description": ""
+  },
+
+    {
+    "name": "十字路口",
+    "url": "https://paracosm.pages.dev/",
+    "avatar": "/img/tcr_button.png",
+    "description": ""
   }
 ]
