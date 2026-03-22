@@ -265,34 +265,32 @@
 </style>
 
 <script>
-/* JS 牌堆 */
 (function(){
   const TAROT = [
-    {name: "疮痂之歌", meaning: "缺失、幻灭"},
-    {name: "燕子", meaning: "感知冷暖，劳碌筑屋"},
-    {name: "血泉", meaning: "献祭、殉难"},
-    {name: "泥土", meaning: "倦怠、休憩"},
-    {name: "解药", meaning: "检查被遗忘的事物。"},
+    {name: "疮痂之歌", meaning: "缺失 幻灭"},
+    {name: "燕子", meaning: "感知冷暖\n劳碌筑屋"},
+    {name: "血泉", meaning: "献祭 殉难"},
+    {name: "泥土", meaning: "倦怠 休憩"},
+    {name: "解药", meaning: "检查被遗忘的事物"},
     {name: "眼睛", meaning: "对鼻尖的仇恨"},
     {name: "琥珀", meaning: "改换层次观察世界"},
     {name: "黄金", meaning: "时间停驻"},
     {name: "酸地牢", meaning: "失而复得复失"},
     {name: "蛇", meaning: "持续的渴求"},
-    {name: "夜", meaning: "未卜先知、沉溺未知"},
-    {name: "日", meaning: "适宜、安神、走动"},
-    {name: "黄昏", meaning: "变动、无序、不可知"},
-    {name: "正午", meaning: "激情、盲目、躁狂"},
-    {name: "王子", meaning: "遗忘、分裂"},
-    {name: "公主", meaning: "怀念、贪恋"},
+    {name: "夜", meaning: "未卜先知\n沉溺未知"},
+    {name: "日", meaning: "适宜 安神 走动"},
+    {name: "黄昏", meaning: "变动 无序"},
+    {name: "正午", meaning: "激情 盲目"},
+    {name: "王子", meaning: "遗忘 分裂"},
+    {name: "公主", meaning: "怀念 贪恋"},
     {name: "将军", meaning: "嫉妒滋生恐惧"},
     {name: "酋长", meaning: "朝向阴影生存"},
-    {name: "水手", meaning: "磨损、耗竭"},
-    {name: "人皮商人", meaning: "创造、超验"}
+    {name: "水手", meaning: "磨损 耗竭"},
+    {name: "人皮商", meaning: "创造 超验"}
   ];
 
   const KEY = 'hugo_tarot_draw_vintage_v1_minimal';
 
-  // DOM refs
   const card = document.getElementById('v-tarot-card');
   const drawBtn = document.getElementById('v-draw-btn');
   const nameEl = document.getElementById('v-card-name');
@@ -365,15 +363,13 @@
     showCard(idx);
     drawBtn.disabled = true;
     drawBtn.textContent = '今日已抽取';
-    metaResult.textContent = `你抽到：${TAROT[idx].name}。`;
-    metaNext.textContent = `属灵日期：${today}`;
-    // 轻微的显隐动画
+    metaResult.textContent = `今天，你抽到的是：${TAROT[idx].name}。`;
+
     try {
       card.animate([{opacity:0.97},{opacity:1}], {duration:300, easing:'ease-out'});
     } catch(e){}
   }
 
-  // 绑定事件
   drawBtn.addEventListener('click', draw);
   card.addEventListener('click', function(){
     const rec = loadRecord();
@@ -385,7 +381,6 @@
     if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
   });
 
-  // init on load
   init();
 })();
 </script>

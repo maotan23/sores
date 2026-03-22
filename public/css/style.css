@@ -61,6 +61,8 @@
 
 html {
   line-height: 1.5;
+
+  
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -504,6 +506,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
+
+  html {
+    font-size: 120%;
   }
 }
 
@@ -1487,7 +1493,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-sm {
   font-size: 0.75rem;
-  line-height: 1.25rem;
+  line-height: 1.3rem;
 }
 
 .text-sp {
@@ -2102,9 +2108,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }
 
-/* 应用到整个页面 */
 ::-webkit-scrollbar {
-  width: 12px;               /* 垂直滚动条宽度 */
+  width: 8px;               /* 垂直滚动条宽度 */
   height: 12px;              /* 水平滚动条高度 */
 }
 
@@ -2115,8 +2120,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 ::-webkit-scrollbar-thumb {
   background-color: #6d0000;    /* 滑块颜色 */
-  border-radius: 8px;
-  border: 3px solid #f0f0f0; /* 留出内边，让滑块有“空心”效果 */
 }
 
 ::-webkit-scrollbar-thumb:hover {

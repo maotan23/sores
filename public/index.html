@@ -1215,34 +1215,32 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 <script>
- 
 (function(){
   const TAROT = [
-    {name: "疮痂之歌", meaning: "缺失、幻灭"},
-    {name: "燕子", meaning: "感知冷暖，劳碌筑屋"},
-    {name: "血泉", meaning: "献祭、殉难"},
-    {name: "泥土", meaning: "倦怠、休憩"},
-    {name: "解药", meaning: "检查被遗忘的事物。"},
+    {name: "疮痂之歌", meaning: "缺失 幻灭"},
+    {name: "燕子", meaning: "感知冷暖\n劳碌筑屋"},
+    {name: "血泉", meaning: "献祭 殉难"},
+    {name: "泥土", meaning: "倦怠 休憩"},
+    {name: "解药", meaning: "检查被遗忘的事物"},
     {name: "眼睛", meaning: "对鼻尖的仇恨"},
     {name: "琥珀", meaning: "改换层次观察世界"},
     {name: "黄金", meaning: "时间停驻"},
     {name: "酸地牢", meaning: "失而复得复失"},
     {name: "蛇", meaning: "持续的渴求"},
-    {name: "夜", meaning: "未卜先知、沉溺未知"},
-    {name: "日", meaning: "适宜、安神、走动"},
-    {name: "黄昏", meaning: "变动、无序、不可知"},
-    {name: "正午", meaning: "激情、盲目、躁狂"},
-    {name: "王子", meaning: "遗忘、分裂"},
-    {name: "公主", meaning: "怀念、贪恋"},
+    {name: "夜", meaning: "未卜先知\n沉溺未知"},
+    {name: "日", meaning: "适宜 安神 走动"},
+    {name: "黄昏", meaning: "变动 无序"},
+    {name: "正午", meaning: "激情 盲目"},
+    {name: "王子", meaning: "遗忘 分裂"},
+    {name: "公主", meaning: "怀念 贪恋"},
     {name: "将军", meaning: "嫉妒滋生恐惧"},
     {name: "酋长", meaning: "朝向阴影生存"},
-    {name: "水手", meaning: "磨损、耗竭"},
-    {name: "人皮商人", meaning: "创造、超验"}
+    {name: "水手", meaning: "磨损 耗竭"},
+    {name: "人皮商", meaning: "创造 超验"}
   ];
 
   const KEY = 'hugo_tarot_draw_vintage_v1_minimal';
 
-  
   const card = document.getElementById('v-tarot-card');
   const drawBtn = document.getElementById('v-draw-btn');
   const nameEl = document.getElementById('v-card-name');
@@ -1315,15 +1313,13 @@ document.addEventListener('DOMContentLoaded', function() {
     showCard(idx);
     drawBtn.disabled = true;
     drawBtn.textContent = '今日已抽取';
-    metaResult.textContent = `你抽到：${TAROT[idx].name}。`;
-    metaNext.textContent = `属灵日期：${today}`;
-    
+    metaResult.textContent = `今天，你抽到的是：${TAROT[idx].name}。`;
+
     try {
       card.animate([{opacity:0.97},{opacity:1}], {duration:300, easing:'ease-out'});
     } catch(e){}
   }
 
-  
   drawBtn.addEventListener('click', draw);
   card.addEventListener('click', function(){
     const rec = loadRecord();
@@ -1335,7 +1331,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
   });
 
-  
   init();
 })();
 </script>
@@ -1366,8 +1361,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     <div class="flex justify-center">
-      <div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
-  
+      <div id="site-search" class="mx-3" style="max-width:24rem; width:100%;">
   <label for="search-input" class="search-label" style="display:block; margin-bottom:0.35rem; font-size:0.95rem;">
     搜索本站文章
   </label>
@@ -1377,9 +1371,9 @@ document.addEventListener('DOMContentLoaded', function() {
       id="search-input"
       type="search"
       placeholder="输入关键词 / 标题 / 标签…"
-      aria-label="检索本站文章"
+      aria-label="搜索本站文章"
       autocomplete="off"
-      class="w-full p-2 rounded border-0 border-b border-gray-200 text-base focus:outline-none"
+      class="w-full p-2 rounded border-0 border-b border-gray-200 text-sm focus:outline-none"
       style="border-bottom-width:1px; border-color:var(--search-border-color);"
       disabled
     />
@@ -1389,7 +1383,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
- 
 (async function () {
   const INDEX_URL = '\/index.json';
   const input = document.getElementById('search-input');
@@ -1522,7 +1515,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return `
       <article class="search-hit border-b border-gray-100 py-2">
         <a href="${url}" class="block p-2 no-underline transition duration-100 hover:bg-gray-100">
-          <h3 class="text-base" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
+          <h3 class="text-sm" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
           <div class="text-xs" style="margin-top:6px; color:var(--search-date-color);">${escapeHtml(date)}</div>
           <p class="text-sm" style="margin:0.4rem 0 0; color:var(--search-summary-color);">${summaryHtml}</p>
         </a>
@@ -1557,7 +1550,6 @@ document.addEventListener('DOMContentLoaded', function() {
   --search-label-color: #374151;
 }
 
- 
 .dark :root,
 .dark {
   --search-input-color: #e5e7eb;
@@ -1571,20 +1563,17 @@ document.addEventListener('DOMContentLoaded', function() {
   --search-label-color: #d1d5db;
 }
 
- 
 .search-label {
   color: var(--search-label-color);
   font-weight: 600;
 }
 
- 
 #site-search input {
   background: transparent;
   border-radius: 6px;
   border: 0;
   border-bottom: 1px solid var(--search-border-color);
   padding: 0.5rem 0.6rem;
-  font-size: 1rem;
   color: var(--search-input-color);
   outline: none;
 }

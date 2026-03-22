@@ -3,7 +3,7 @@
         {{ if .Params.image }}
         <img class="rounded mx-auto w-24 h-32 lg:mx-0 mb-5 object-cover lg:mb-0" src="{{ .Params.image | relURL }}" alt="thumbnail" />
         {{ else }}
-        <img class="rounded mx-auto w-auto h-32 lg:mx-0 mb-5 lg:mb-0" src="{{ "/img/novel.png" | relURL }}" alt="thumbnail" />
+        <img class="mx-auto w-auto h-32 lg:mx-0 mb-5 lg:mb-0" src="{{ "/img/novel.png" | relURL }}" alt="thumbnail" />
         {{ end }}
     </a>
     <div class="lg:ml-8">
@@ -16,7 +16,7 @@
             <div id="tags">
                 {{ range . }}
                 <span
-                    class="inline-flex my-2 mr-2 leading-4 mb-2 content-center justify-center h-8 text-blue-600"><a
+                    class="inline-flex my-2 mr-2 leading-4 mb-2 h-8 text-blue-600"><a
                         href="{{ "tags" | absURL}}/{{ . | urlize }}">#{{ . }}</a></span>
                 {{ end }}
             </div>
