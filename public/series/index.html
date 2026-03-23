@@ -146,8 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     <div class="flex justify-center">
-      <div id="site-search" class="mx-3 my-3" style="max-width:24rem; width:100%;">
-  
+      <div id="site-search" class="mx-3" style="max-width:24rem; width:100%;">
   <label for="search-input" class="search-label" style="display:block; margin-bottom:0.35rem; font-size:0.95rem;">
     搜索本站文章
   </label>
@@ -157,9 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
       id="search-input"
       type="search"
       placeholder="输入关键词 / 标题 / 标签…"
-      aria-label="检索本站文章"
+      aria-label="搜索本站文章"
       autocomplete="off"
-      class="w-full p-2 rounded border-0 border-b border-gray-200 text-base focus:outline-none"
+      class="w-full p-2 rounded border-0 border-b border-gray-200 text-sm focus:outline-none"
       style="border-bottom-width:1px; border-color:var(--search-border-color);"
       disabled
     />
@@ -169,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
- 
 (async function () {
   const INDEX_URL = '\/index.json';
   const input = document.getElementById('search-input');
@@ -302,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return `
       <article class="search-hit border-b border-gray-100 py-2">
         <a href="${url}" class="block p-2 no-underline transition duration-100 hover:bg-gray-100">
-          <h3 class="text-base" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
+          <h3 class="text-sm" style="margin:0; color:var(--search-title-color);">${titleHtml}</h3>
           <div class="text-xs" style="margin-top:6px; color:var(--search-date-color);">${escapeHtml(date)}</div>
           <p class="text-sm" style="margin:0.4rem 0 0; color:var(--search-summary-color);">${summaryHtml}</p>
         </a>
@@ -337,7 +335,6 @@ document.addEventListener('DOMContentLoaded', function() {
   --search-label-color: #374151;
 }
 
- 
 .dark :root,
 .dark {
   --search-input-color: #e5e7eb;
@@ -351,20 +348,17 @@ document.addEventListener('DOMContentLoaded', function() {
   --search-label-color: #d1d5db;
 }
 
- 
 .search-label {
   color: var(--search-label-color);
   font-weight: 600;
 }
 
- 
 #site-search input {
   background: transparent;
   border-radius: 6px;
   border: 0;
   border-bottom: 1px solid var(--search-border-color);
   padding: 0.5rem 0.6rem;
-  font-size: 1rem;
   color: var(--search-input-color);
   outline: none;
 }

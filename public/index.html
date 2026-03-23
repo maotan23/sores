@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.toggleDarkMode = toggleTheme;
 });
 </script><div class="container mx-auto max-w-7xl my-4 flex-grow" id="content">
-<h2 class="text-4xl py-3 dark:text-white"></h2>
+<h2 class="text-4xl dark:text-white"></h2>
 
 
 
@@ -242,7 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
   
-
 
 
 
@@ -1344,22 +1343,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
 <div class="mt-8">
-  
   
   
   
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-    
     <div class="flex justify-center lg:justify-start">
       <a href="/posts/links/" class="block">
-        <img src="/img/a.webp" alt="Banner A" class="max-w-full h-auto w-48 sm:w-64 banner-image">
+        <img
+          src="/img/a.webp"
+          srcset="/img/a.webp 1x, /img/a@2x.webp 2x"
+          alt="Banner A"
+          width="256"
+          height="98"
+          class="block w-48 sm:w-64 h-auto"
+        >
       </a>
     </div>
 
-    
     <div class="flex justify-center">
       <div id="site-search" class="mx-3" style="max-width:24rem; width:100%;">
   <label for="search-input" class="search-label" style="display:block; margin-bottom:0.35rem; font-size:0.95rem;">
@@ -1631,15 +1633,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </div>
 
-    
     <div class="flex justify-center lg:justify-end">
       <a href="/posts/guestbook/" class="block">
-        <img src="/img/b.webp" alt="Banner B" class="max-w-full h-auto w-48 sm:w-64 banner-image">
+        <img
+          src="/img/b.webp"
+          srcset="/img/b.webp 1x, /img/b@2x.webp 2x"
+          alt="Banner B"
+          width="256"
+          height="98"
+          class="block w-48 sm:w-64 h-auto"
+        >
       </a>
     </div>
   </div>
 </div>
-
 
         </div><footer class="bg-rose text-white dark:bg-warmgray-900 dark:text-white pt-5 pb-5" style="font-family: 'Saint-Andrews'">
   <div class="container mx-auto px-4">
