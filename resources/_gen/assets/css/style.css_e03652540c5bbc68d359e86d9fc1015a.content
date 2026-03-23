@@ -1143,6 +1143,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 6rem;
 }
 
+.w-32 {
+  width: 9rem;
+}
+
 .w-set {
   width: 12rem;
 }

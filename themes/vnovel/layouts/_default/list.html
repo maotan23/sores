@@ -64,8 +64,8 @@
 
 <div class="mt-8">
   {{ $banners := slice
-    (dict "image" "/img/a.webp" "link" "/posts/links/" "title" "友情链接")
-    (dict "image" "/img/b.webp" "link" "/posts/guestbook/" "title" "留言板")
+    (dict "image" "/img/a.svg" "link" "/posts/links/" "title" "友情链接")
+    (dict "image" "/img/b.svg" "link" "/posts/guestbook/" "title" "留言板")
   }}
   {{ $b0 := index $banners 0 }}
   {{ $b1 := index $banners 1 }}
@@ -76,9 +76,7 @@
         <img
           src="{{ $b0.image }}"
           alt="{{ $b0.title }}"
-          width="256"
-          height="98"
-          class="block w-48 sm:w-64 h-auto"
+          class="block w-32 h-auto"
         >
       </a>
     </div>
@@ -92,9 +90,7 @@
         <img
           src="{{ $b1.image }}"
           alt="{{ $b1.title }}"
-          width="256"
-          height="98"
-          class="block w-48 sm:w-64 h-auto"
+          class="block w-32 h-auto"
         >
       </a>
     </div>
